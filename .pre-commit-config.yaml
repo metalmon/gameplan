@@ -2,38 +2,29 @@ exclude: 'node_modules|.git'
 default_stages: [pre-commit]
 fail_fast: false
 
-
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v5.0.0
+    rev: v4.4.0
     hooks:
       - id: trailing-whitespace
-        exclude: ".*json$|.*txt$|.*csv|.*md|.*svg"
-      - id: check-merge-conflict
-      - id: check-ast
-      - id: check-json
-      - id: check-toml
+      - id: end-of-file-fixer
       - id: check-yaml
-      - id: debug-statements
+      - id: check-added-large-files
 
-  - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: v0.8.1
+  - repo: https://github.com/psf/black
+    rev: 23.3.0
     hooks:
-      - id: ruff
-        name: "Run ruff import sorter"
-        args: ["--select=I", "--fix"]
+      - id: black
 
-      - id: ruff
-        name: "Run ruff linter"
-
-      - id: ruff-format
-        name: "Run ruff formatter"
-
-  - repo: https://github.com/pre-commit/mirrors-prettier
-    rev: v3.1.0
+  - repo: https://github.com/pycqa/isort
+    rev: 5.12.0
     hooks:
-      - id: prettier
-        types_or: [javascript, vue, scss]
+      - id: isort
+
+  - repo: https://github.com/pycqa/flake8
+    rev: 6.0.0
+    hooks:
+      - id: flake8
 
 ci:
     autoupdate_schedule: weekly

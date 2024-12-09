@@ -10,3 +10,5 @@ gameplan/public/frontend
 gameplan/www/teams.html
 gameplan/www/g.html
 build
+# Auto-generated files
+frontend/components.d.ts

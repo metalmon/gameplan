@@ -1,0 +1,6 @@
+frappe>=15.0.0
+rembg
+packaging
++black
++flake8
++isort 
