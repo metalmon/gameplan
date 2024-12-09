@@ -100,6 +100,10 @@ Currently, this app depends on the `develop` branch of [frappe](https://github.c
     ```
  1. Now, you can access the site on vite dev server at `http://gameplan.test:8080`
 
+## Configuration
+
+For detailed configuration instructions (like setting up Unsplash integration), please refer to the [Configuration Guide](CONFIGURATION.md).
+
 ## Links
 
 - [Report Bugs](https://github.com/frappe/gameplan/issues): If you find any bugs, feel free to report them on GitHub Issues tab.
