@@ -6,4 +6,4 @@ from gameplan.install import download_rembg_model
 
 
 def execute():
-	download_rembg_model()
+    download_rembg_model()

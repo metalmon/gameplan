@@ -6,6 +6,6 @@ import frappe
 
 
 def execute():
-	Task = frappe.qb.DocType("GP Task")
-	frappe.qb.update(Task).where(Task.status.isnull()).set(Task.status, "Backlog").run()
-	frappe.qb.update(Task).where(Task.is_completed == 1).set(Task.status, "Done").run()
+    Task = frappe.qb.DocType("GP Task")
+    frappe.qb.update(Task).where(Task.status.isnull()).set(Task.status, "Backlog").run()
+    frappe.qb.update(Task).where(Task.is_completed == 1).set(Task.status, "Done").run()

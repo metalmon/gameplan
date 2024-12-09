@@ -8,8 +8,8 @@ from gameplan.mixins.on_delete import delete_linked_records
 
 
 class GPGuestAccess(Document):
-	pass
+    pass
 
 
 def on_user_delete(doc, method):
-	delete_linked_records("User", doc.name, ["GP Guest Access"])
+    delete_linked_records("User", doc.name, ["GP Guest Access"])

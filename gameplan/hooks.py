@@ -9,13 +9,13 @@ app_icon_title = "Gameplan"
 app_icon_route = "/g"
 
 add_to_apps_screen = [
-	{
-		"name": "gameplan",
-		"logo": "/assets/gameplan/manifest/favicon-196.png",
-		"title": "Gameplan",
-		"route": "/g",
-		# "has_permission": "gameplan.api.permission.has_app_permission"
-	}
+    {
+        "name": "gameplan",
+        "logo": "/assets/gameplan/manifest/favicon-196.png",
+        "title": "Gameplan",
+        "route": "/g",
+        # "has_permission": "gameplan.api.permission.has_app_permission"
+    }
 ]
 
 # Includes in <head>
@@ -48,7 +48,7 @@ add_to_apps_screen = [
 # Fixtures
 
 fixtures = [
-	{"dt": "Role", "filters": [["role_name", "like", "Gameplan %"]]},
+    {"dt": "Role", "filters": [["role_name", "like", "Gameplan %"]]},
 ]
 
 # Home Pages
@@ -63,11 +63,11 @@ fixtures = [
 # }
 
 website_route_rules = [
-	{"from_route": "/g/<path:app_path>", "to_route": "g"},
+    {"from_route": "/g/<path:app_path>", "to_route": "g"},
 ]
 
 website_redirects = [
-	{"source": r"/teams(/.*)?", "target": r"/g\1"},
+    {"source": r"/teams(/.*)?", "target": r"/g\1"},
 ]
 
 # Generators
@@ -88,10 +88,18 @@ website_redirects = [
 # Installation
 # ------------
 
+required_apps = ["frappe"]
+
 before_install = "gameplan.install.before_install"
 after_install = "gameplan.install.after_install"
+after_migrate = [
+    "gameplan.install.after_migrate",
+    "gameplan.search.build_index_in_background",
+]
 
-after_migrate = ["gameplan.search.build_index_in_background"]
+# Version compatibility
+app_version = "2.0.0"
+app_requires_frappe_version = ">=15.0.0"
 
 # Uninstallation
 # ------------
@@ -128,17 +136,17 @@ has_permission = {"GP Page": "gameplan.gameplan.doctype.gp_page.gp_page.has_perm
 # Hook on document methods and events
 
 doc_events = {
-	"*": {
-		"on_trash": "gameplan.mixins.on_delete.on_trash",
-	},
-	"User": {
-		"after_insert": "gameplan.gameplan.doctype.gp_user_profile.gp_user_profile.create_user_profile",
-		"on_trash": [
-			"gameplan.gameplan.doctype.gp_user_profile.gp_user_profile.delete_user_profile",
-			"gameplan.gameplan.doctype.gp_guest_access.gp_guest_access.on_user_delete",
-		],
-		"on_update": "gameplan.gameplan.doctype.gp_user_profile.gp_user_profile.on_user_update",
-	},
+    "*": {
+        "on_trash": "gameplan.mixins.on_delete.on_trash",
+    },
+    "User": {
+        "after_insert": "gameplan.gameplan.doctype.gp_user_profile.gp_user_profile.create_user_profile",
+        "on_trash": [
+            "gameplan.gameplan.doctype.gp_user_profile.gp_user_profile.delete_user_profile",
+            "gameplan.gameplan.doctype.gp_guest_access.gp_guest_access.on_user_delete",
+        ],
+        "on_update": "gameplan.gameplan.doctype.gp_user_profile.gp_user_profile.on_user_update",
+    },
 }
 
 on_login = "gameplan.www.g.on_login"
@@ -147,8 +155,10 @@ on_login = "gameplan.www.g.on_login"
 # ---------------
 
 scheduler_events = {
-	"all": ["gameplan.search.build_index_if_not_exists"],
-	"hourly": ["gameplan.gameplan.doctype.gp_invitation.gp_invitation.expire_invitations"],
+    "all": ["gameplan.search.build_index_if_not_exists"],
+    "hourly": [
+        "gameplan.gameplan.doctype.gp_invitation.gp_invitation.expire_invitations"
+    ],
 }
 
 # scheduler_events = {

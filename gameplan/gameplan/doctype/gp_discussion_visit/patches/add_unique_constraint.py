@@ -8,21 +8,21 @@ from gameplan.gameplan.doctype.gp_discussion_visit.gp_discussion_visit import af
 
 
 def execute():
-	delete_duplicates()
-	after_doctype_insert()
+    delete_duplicates()
+    after_doctype_insert()
 
 
 def delete_duplicates():
-	from frappe.query_builder.functions import Count
+    from frappe.query_builder.functions import Count
 
-	DiscussionVisit = frappe.qb.DocType("GP Discussion Visit")
-	duplicates = (
-		frappe.qb.from_(DiscussionVisit)
-		.select(DiscussionVisit.name)
-		.groupby(DiscussionVisit.discussion, DiscussionVisit.user)
-		.having(Count(DiscussionVisit.name) > 1)
-	).run(as_dict=1, pluck="name")
+    DiscussionVisit = frappe.qb.DocType("GP Discussion Visit")
+    duplicates = (
+        frappe.qb.from_(DiscussionVisit)
+        .select(DiscussionVisit.name)
+        .groupby(DiscussionVisit.discussion, DiscussionVisit.user)
+        .having(Count(DiscussionVisit.name) > 1)
+    ).run(as_dict=1, pluck="name")
 
-	if duplicates:
-		for name in duplicates:
-			frappe.delete_doc_if_exists("GP Discussion Visit", name)
+    if duplicates:
+        for name in duplicates:
+            frappe.delete_doc_if_exists("GP Discussion Visit", name)
