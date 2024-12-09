@@ -6,7 +6,7 @@ import frappe
 from frappe.utils import cstr, split_emails, validate_email_address
 
 import gameplan
-from gameplan.utils import validate_type
+from gameplan.utils.utils import validate_type
 
 
 @frappe.whitelist(allow_guest=True)
