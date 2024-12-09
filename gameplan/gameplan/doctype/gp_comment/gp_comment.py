@@ -7,7 +7,7 @@ from frappe.model.document import Document
 from gameplan.mixins.mentions import HasMentions
 from gameplan.mixins.reactions import HasReactions
 from gameplan.search import GameplanSearch
-from gameplan.utils import remove_empty_trailing_paragraphs
+from gameplan.utils.utils import remove_empty_trailing_paragraphs
 
 
 class GPComment(HasMentions, HasReactions, Document):

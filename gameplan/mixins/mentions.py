@@ -5,7 +5,7 @@
 import frappe
 from frappe.utils import get_fullname
 
-from gameplan.utils import extract_mentions
+from gameplan.utils.utils import extract_mentions
 
 
 class HasMentions:

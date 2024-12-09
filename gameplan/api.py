@@ -4,7 +4,6 @@
 
 import frappe
 from frappe.utils import cstr, split_emails, validate_email_address
-from packaging import version  # Python's built-in version parsing
 
 import gameplan
 from gameplan.utils import validate_type

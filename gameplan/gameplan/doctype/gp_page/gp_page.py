@@ -5,7 +5,7 @@
 from frappe.model.document import Document
 
 from gameplan.search import GameplanSearch
-from gameplan.utils import url_safe_slug
+from gameplan.utils.utils import url_safe_slug
 
 
 class GPPage(Document):

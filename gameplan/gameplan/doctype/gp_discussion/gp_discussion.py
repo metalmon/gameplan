@@ -9,7 +9,7 @@ from gameplan.mixins.activity import HasActivity
 from gameplan.mixins.mentions import HasMentions
 from gameplan.mixins.reactions import HasReactions
 from gameplan.search import GameplanSearch
-from gameplan.utils import remove_empty_trailing_paragraphs, url_safe_slug
+from gameplan.utils.utils import remove_empty_trailing_paragraphs, url_safe_slug
 
 
 class GPDiscussion(HasActivity, HasMentions, HasReactions, Document):

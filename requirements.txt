@@ -3,4 +3,4 @@ rembg
 packaging
 +black
 +flake8
-+isort 
++isort
