@@ -95,12 +95,12 @@ export default {
   methods: {
     changeUserRole({ user, role }) {
       this.$dialog({
-        title: 'Change Role',
-        message: `Are you sure you want to change ${user.full_name}'s role to ${role}?`,
+        title: __('Change Role'),
+        message: __("Are you sure you want to change {0}'s role to {1}?", [user.full_name, role]),
         error: computed(() => this.$resources.changeUserRole.error),
         actions: [
           {
-            label: 'Change Role',
+            label: __('Change Role'),
             variant: 'solid',
             onClick: (close) => {
               return this.$resources.changeUserRole.submit(
@@ -110,19 +110,19 @@ export default {
             },
           },
           {
-            label: 'Cancel',
+            label: __('Cancel'),
           },
         ],
       })
     },
     removeUser(user) {
       this.$dialog({
-        title: 'Remove User',
-        message: `Are you sure you want to remove ${user.full_name} (${user.email})?`,
+        title: __('Remove User'),
+        message: __("Are you sure you want to remove {0} ({1})?", [user.full_name, user.email]),
         error: computed(() => this.$resources.removeUser.error),
         actions: [
           {
-            label: 'Remove User',
+            label: __('Remove User'),
             variant: 'solid',
             theme: 'red',
             onClick: (close) => {
@@ -130,21 +130,27 @@ export default {
             },
           },
           {
-            label: 'Cancel',
+            label: __('Cancel'),
           },
         ],
       })
     },
     getUserRole(user) {
-      return (user.role || '').replace('Gameplan', '')
+      let role = (user.role || '').replace('Gameplan', '')
+      switch (role.trim()) {
+        case 'Admin': return __('Admin')
+        case 'Member': return __('Member')
+        case 'Guest': return __('Guest')
+        default: return role
+      }
     },
     getDropdownOptions(user) {
       return [
         {
-          label: 'Admin',
+          label: __('Admin'),
           component: (props) =>
             RoleOption({
-              role: 'Admin',
+              role: __('Admin'),
               active: props.active,
               selected: user.role === 'Gameplan Admin',
               onClick: () =>
@@ -155,10 +161,10 @@ export default {
             }),
         },
         {
-          label: 'Member',
+          label: __('Member'),
           component: (props) =>
             RoleOption({
-              role: 'Member',
+              role: __('Member'),
               active: props.active,
               selected: user.role === 'Gameplan Member',
               onClick: () =>
@@ -169,10 +175,10 @@ export default {
             }),
         },
         {
-          label: 'Guest',
+          label: __('Guest'),
           component: (props) =>
             RoleOption({
-              role: 'Guest',
+              role: __('Guest'),
               active: props.active,
               selected: user.role === 'Gameplan Guest',
               onClick: () =>
@@ -183,7 +189,7 @@ export default {
             }),
         },
         {
-          label: 'Remove',
+          label: __('Remove'),
           component: (props) =>
             h(
               'button',
@@ -194,7 +200,7 @@ export default {
                 ],
                 onClick: () => this.removeUser(user),
               },
-              'Remove',
+              __('Remove'),
             ),
         },
       ]

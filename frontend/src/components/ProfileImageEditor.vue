@@ -13,10 +13,10 @@
             <span class="inline-block rounded-md bg-surface-gray-7/60 px-2 py-1 text-ink-white">
               {{
                 uploading
-                  ? `Uploading ${progress}%`
+                  ? __('Uploading {progress}%', { progress })
                   : profile.doc.image
-                    ? 'Change Image'
-                    : 'Upload Image'
+                  ? __('Change Image')
+                  : __('Upload Image')
               }}
             </span>
           </div>
@@ -38,7 +38,7 @@
             @click="profile.revertImageBackground.submit()"
             :loading="profile.revertImageBackground.loading"
           >
-            Revert To Original
+            {{ __('Revert To Original') }}
           </Button>
           <Button
             v-if="profile.doc.image && !profile.doc.original_image"
@@ -49,7 +49,7 @@
             "
             :loading="profile.removeImageBackground.loading"
           >
-            Set Colored Background
+            {{ __('Set Colored Background') }}
           </Button>
           <ColorPicker
             v-if="profile.doc.is_image_background_removed"
@@ -61,11 +61,11 @@
             "
           >
             <template v-slot="{ isOpen }">
-              <Button> Change Background Color </Button>
+              <Button> {{ __('Change Background Color') }} </Button>
             </template>
           </ColorPicker>
 
-          <Button v-if="profile.doc.image" @click="setUserImage(null)"> Remove </Button>
+          <Button v-if="profile.doc.image" @click="setUserImage(null)"> {{ __('Remove') }} </Button>
         </div>
       </div>
     </template>
@@ -87,7 +87,7 @@ export default {
     validateFile(file) {
       let extn = file.name.split('.').pop().toLowerCase()
       if (!['png', 'jpg'].includes(extn)) {
-        return 'Only PNG and JPG images are allowed'
+        return __('Only PNG and JPG images are allowed')
       }
     },
   },

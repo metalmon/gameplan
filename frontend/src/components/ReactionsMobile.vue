@@ -2,7 +2,7 @@
   <div>
     <div class="flex select-none gap-1.5 flex-wrap">
       <button
-        aria-label="Add a reaction"
+        aria-label="{{ __('Add a reaction') }}"
         :disabled="isLoading"
         @click="show = true"
         class="flex h-full items-center justify-center rounded-full bg-surface-gray-2 px-2 py-1 text-ink-gray-7 transition hover:bg-surface-gray-3"

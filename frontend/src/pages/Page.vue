@@ -20,7 +20,7 @@
           @click="save"
           :loading="page.save.loading"
         >
-          Save
+          {{ __('Save') }}
         </Button>
       </div>
     </header>
@@ -43,7 +43,7 @@
           editor-class="rounded-b-lg max-w-[unset] prose-sm pb-[50vh] md:px-[70px]"
           :content="page.doc.content"
           @change="page.doc.content = $event"
-          placeholder="Start writing here..."
+          :placeholder="__('Start writing here...')"
           :bubbleMenu="true"
           ref="content"
         />
@@ -120,7 +120,7 @@ export default {
       if (!this.page.doc) return []
       if (!this.page.doc.project) {
         return [
-          { label: 'My Pages', route: { name: 'MyPages' } },
+          { label: __('My Pages'), route: { name: 'MyPages' } },
           {
             label: this.pageTitle,
             route: {
@@ -151,7 +151,7 @@ export default {
           },
         },
         {
-          label: 'Pages',
+          label: __('Pages'),
           route: {
             name: 'ProjectPages',
             params: {

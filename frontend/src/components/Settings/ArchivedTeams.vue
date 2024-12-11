@@ -36,12 +36,12 @@
             )
           "
         >
-          Unarchive
+          {{ __('Unarchive') }}
         </Button>
       </div>
       <ErrorMessage class="pt-2" :message="teams.runDocMethod.error" />
     </div>
-    <div v-else class="text-sm text-ink-gray-5">No archived teams</div>
+    <div v-else class="text-sm text-ink-gray-5">{{ __('No archived teams') }}</div>
   </div>
 </template>
 <script>

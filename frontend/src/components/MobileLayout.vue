@@ -38,19 +38,19 @@ export default {
     tabs() {
       return [
         {
-          name: 'Discussions',
+          name: __('Discussions'),
           icon: LucideNewspaper,
           route: { name: 'Discussions' },
           isActive: this.$route.name === 'Discussions',
         },
         {
-          name: 'MyTasks',
+          name: __('MyTasks'),
           icon: LucideListTodo,
           route: { name: 'MyTasks' },
           isActive: /MyTasks|Task/g.test(this.$route.name),
         },
         {
-          name: 'Teams',
+          name: __('Teams'),
           icon: LucideLayoutGrid,
           route: { name: 'Teams' },
           isActive: [
@@ -65,21 +65,21 @@ export default {
           ].includes(this.$route.name),
         },
         {
-          name: 'People',
+          name: __('People'),
           icon: LucideUsers2,
           route: { name: 'People' },
           isActive: /People|PersonProfile/g.test(this.$route.name),
           condition: () => this.$user().isNotGuest,
         },
         {
-          name: 'Search',
+          name: __('Search'),
           icon: LucideSearch,
           route: { name: 'Search' },
           isActive: this.$route.name === 'Search',
           condition: () => this.$user().isNotGuest,
         },
         {
-          name: 'Notifications',
+          name: __('Notifications'),
           icon: LucideInbox,
           route: { name: 'Notifications' },
           isActive: this.$route.name === 'Notifications',

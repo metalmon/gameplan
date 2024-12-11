@@ -44,22 +44,22 @@ import LucideSettings from '~icons/lucide/settings'
 
 let tabs = [
   {
-    label: 'Members',
+    label: __('Members'),
     icon: LucideUsers,
     component: markRaw(Members),
   },
   {
-    label: 'Invites',
+    label: __('Invites'),
     icon: LucideUsersPlus,
     component: markRaw(InvitePeople),
   },
   {
-    label: 'Archive',
+    label: __('Archive'),
     icon: LucideFolderMinus,
     component: markRaw(ArchivedTeams),
   },
   {
-    label: 'Settings',
+    label: __('Settings'),
     icon: LucideSettings,
     component: markRaw(SettingsTabDialog),
   },

@@ -1,10 +1,10 @@
 <template>
   <Dialog
     :options="{
-      title: 'New Task',
+      title: __('New Task'),
       actions: [
         {
-          label: 'Create',
+          label: __('Create'),
           variant: 'solid',
           onClick: onCreateClick,
         },
@@ -16,8 +16,8 @@
   >
     <template #body-content>
       <div class="space-y-4">
-        <FormControl label="Title" v-model="newTask.title" autocomplete="off" />
-        <FormControl label="Description" type="textarea" v-model="newTask.description" />
+        <FormControl :label="__('Title')" v-model="newTask.title" autocomplete="off" />
+        <FormControl :label="__('Description')" type="textarea" v-model="newTask.description" />
         <div class="flex space-x-2">
           <Dropdown
             :options="
@@ -30,12 +30,12 @@
               <template #prefix>
                 <TaskStatusIcon :status="newTask.status" />
               </template>
-              {{ newTask.status }}
+              {{ statusLabels[newTask.status] }}
             </Button>
           </Dropdown>
-          <TextInput type="date" placeholder="Set due date" v-model="newTask.due_date" />
+          <TextInput type="date" :placeholder="__('Set due date')" v-model="newTask.due_date" />
           <Autocomplete
-            placeholder="Assign a user"
+            :placeholder="__('Assign a user')"
             :options="assignableUsers"
             v-model="newTask.assigned_to"
           />
@@ -50,7 +50,7 @@ import { ref, computed, h } from 'vue'
 import { Dialog, FormControl, Autocomplete, Dropdown, TextInput, createResource } from 'frappe-ui'
 import TaskStatusIcon from './icons/TaskStatusIcon.vue'
 import { activeUsers } from '@/data/users'
-
+import { statusLabels } from '@/utils/statusLabels'
 const props = defineProps(['modelValue', 'defaults'])
 const emit = defineEmits(['update:modelValue'])
 const showDialog = ref(false)
@@ -76,10 +76,10 @@ const initialData = {
 const newTask = ref(initialData)
 
 function statusOptions({ onClick }) {
-  return ['Backlog', 'Todo', 'In Progress', 'Done', 'Canceled'].map((status) => {
+  return Object.keys(statusLabels).map((status) => {
     return {
       icon: () => h(TaskStatusIcon, { status }),
-      label: status,
+      label: statusLabels[status],
       onClick: () => onClick(status),
     }
   })
@@ -108,7 +108,7 @@ function onCreateClick(close) {
     .submit(newTaskDoc, {
       validate() {
         if (!newTask.value.title) {
-          return 'Task title is required'
+          return __('Task title is required')
         }
       },
       onSuccess: _onSuccess,
