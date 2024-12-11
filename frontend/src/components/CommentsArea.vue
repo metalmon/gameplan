@@ -86,7 +86,7 @@
           </span>
           <TabButtons
             class="ml-auto"
-            :buttons="[{ label: 'Comment' }, { label: 'Poll' }]"
+            :buttons="[{ label: __('Comment') }, { label: __('Poll')  }]"
             v-model="newCommentType"
           />
         </div>

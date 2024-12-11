@@ -25,7 +25,7 @@
       >
         <template #prefix><LucideBellPlus class="w-4" /></template>
         {{ $resources.followedProjects.data.length }}
-        {{ $resources.followedProjects.data.length === 1 ? __('Project') : __('Projects') }}
+        {{ $resources.followedProjects.data.length === 1 ? __('') : __('') }}
       </Button>
       <Select class="pr-7" v-if="feedType === 'recent'" :options="orderOptions" v-model="orderBy" />
     </div>
