@@ -18,7 +18,8 @@ import * as Sentry from '@sentry/vue'
 import router from './router'
 import App from './App.vue'
 import './index.css'
-import { dayjs, getPlatform } from '@/utils'
+import { getPlatform } from '@/utils'
+import dayjs from '@/utils/dayjs'
 import { createDialog } from './utils/dialogs'
 import { createToast } from './utils/toasts'
 import { getUser, users } from './data/users'
@@ -40,10 +41,10 @@ let globalComponents = {
 let app = createApp(App)
 setConfig('resourceFetcher', frappeRequest)
 setConfig('defaultListUrl', 'gameplan.extends.client.get_list')
+app.use(translationPlugin)
 app.use(resourcesPlugin)
 app.use(pageMetaPlugin)
 app.use(router)
-app.use(translationPlugin)
 app.mixin(resetDataMixin)
 for (let key in globalComponents) {
   app.component(key, globalComponents[key])
