@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gameplan VERSION\n"
 "Report-Msgid-Bugs-To: faris@frappe.io\n"
-"POT-Creation-Date: 2024-12-11 17:07+0000\n"
-"PO-Revision-Date: 2024-12-11 17:07+0000\n"
+"POT-Creation-Date: 2024-12-11 17:51+0000\n"
+"PO-Revision-Date: 2024-12-11 17:51+0000\n"
 "Last-Translator: faris@frappe.io\n"
 "Language-Team: faris@frappe.io\n"
 "MIME-Version: 1.0\n"
@@ -353,6 +353,7 @@ msgid "Coming soon"
 msgstr ""
 
 #. Label of a Link field in DocType 'GP Notification'
+#: frontend/src/components/CommentsArea.vue:89
 #: gameplan/gameplan/doctype/gp_notification/gp_notification.json
 msgid "Comment"
 msgstr ""
@@ -1380,6 +1381,10 @@ msgstr ""
 msgid "Please select a team"
 msgstr ""
 
+#: frontend/src/components/CommentsArea.vue:89
+msgid "Poll"
+msgstr ""
+
 #: frontend/src/components/Poll.vue:37
 msgid "Poll Options"
 msgstr ""
@@ -1441,7 +1446,6 @@ msgstr ""
 #. Label of a Link field in DocType 'GP Project Visit'
 #. Label of a Link field in DocType 'GP Task'
 #: frontend/src/components/TaskDetail.vue:139
-#: frontend/src/pages/Discussions.vue:28
 #: gameplan/gameplan/doctype/gp_discussion/gp_discussion.json
 #: gameplan/gameplan/doctype/gp_followed_project/gp_followed_project.json
 #: gameplan/gameplan/doctype/gp_guest_access/gp_guest_access.json
@@ -1467,7 +1471,7 @@ msgstr ""
 
 #. Label of a Small Text field in DocType 'GP Invitation'
 #: frontend/src/components/CommandPalette/CommandPalette.vue:309
-#: frontend/src/pages/Discussions.vue:28 frontend/src/pages/TeamOverview.vue:14
+#: frontend/src/pages/TeamOverview.vue:14
 #: gameplan/gameplan/doctype/gp_invitation/gp_invitation.json
 msgid "Projects"
 msgstr ""
@@ -2124,6 +2128,7 @@ msgstr ""
 msgid "discussions"
 msgstr ""
 
+#: frontend/src/components/CommandPalette/ItemProject.vue:8
 #: frontend/src/components/DiscussionList.vue:73
 msgid "in"
 msgstr ""
