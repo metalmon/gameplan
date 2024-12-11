@@ -60,7 +60,7 @@ function fetchTranslations(lang) {
       if (!PRELOADED_LOCALES.includes(locale)) {
         try {
           // Dynamically import the locale
-          import(`dayjs/locale/${locale}.js`)
+          import(/* @vite-ignore */ `dayjs/locale/${locale}.js`)
             .then(() => {
               dayjs.locale(locale)
             })

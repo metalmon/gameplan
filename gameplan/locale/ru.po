@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: Gameplan VERSION\n"
 "Report-Msgid-Bugs-To: faris@frappe.io\n"
 "POT-Creation-Date: 2024-12-11 17:51+0000\n"
-"PO-Revision-Date: 2024-12-11 21:55+0400\n"
+"PO-Revision-Date: 2024-12-12 02:46+0400\n"
 "Last-Translator: AlexKuzin <dev@olimpicfresh.ru>\n"
 "Language-Team: faris@frappe.io\n"
 "Language: ru\n"
@@ -55,7 +55,7 @@ msgstr "Действие"
 
 #: frontend/src/pages/TeamOverview.vue:18
 msgid "Active"
-msgstr "Активный"
+msgstr "Активные"
 
 #: frontend/src/components/TeamMembers.vue:6
 msgid "Add Members"

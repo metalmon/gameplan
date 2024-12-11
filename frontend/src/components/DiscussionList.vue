@@ -70,7 +70,7 @@
                     {{ user.full_name }}
                   </span>
                   <template v-if="!filters || !filters.project">
-                    <span> {{ __('in') }} </span>
+                    <span class="mx-1"> {{ __('in') }} </span>
                     <span>
                       {{ d.team_title }}
                       <span class="text-ink-gray-4"> &mdash; </span>
