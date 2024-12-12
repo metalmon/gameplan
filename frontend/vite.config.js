@@ -92,8 +92,6 @@ export default defineConfig({
         short_name: 'Gameplan',
         start_url: '/g',
         display: 'standalone',
-        background_color: '#ffffff',
-        theme_color: '#ffffff',
         lang: 'en',
         scope: '/g',
         orientation: 'any',
@@ -106,6 +104,20 @@ export default defineConfig({
         url_handlers: [
           {
             origin: '{{ frappe.boot.sitename }}'
+          }
+        ],
+        theme_color: {
+          media: '(prefers-color-scheme: light)',
+          value: '#ffffff'
+        },
+        background_color: {
+          media: '(prefers-color-scheme: light)',
+          value: '#ffffff'
+        },
+        additional_theme_colors: [
+          {
+            media: '(prefers-color-scheme: dark)',
+            value: '#1e1e1e'
           }
         ],
         icons: [
