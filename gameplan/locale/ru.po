@@ -7,17 +7,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gameplan VERSION\n"
 "Report-Msgid-Bugs-To: faris@frappe.io\n"
-"POT-Creation-Date: 2024-12-11 17:51+0000\n"
-"PO-Revision-Date: 2024-12-11 21:55+0400\n"
+"POT-Creation-Date: 2024-12-11 23:14+0000\n"
+"PO-Revision-Date: 2024-12-12 02:46+0400\n"
 "Last-Translator: AlexKuzin <dev@olimpicfresh.ru>\n"
-"Language-Team: faris@frappe.io\n"
 "Language: ru\n"
+"Language-Team: faris@frappe.io\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "Generated-By: Babel 2.13.1\n"
-"X-Generator: Poedit 3.5\n"
 
 #: frontend/src/components/RevisionsDialog.vue:125
 msgid "1 Revision"
@@ -55,7 +54,7 @@ msgstr "Действие"
 
 #: frontend/src/pages/TeamOverview.vue:18
 msgid "Active"
-msgstr "Активный"
+msgstr "Активные"
 
 #: frontend/src/components/TeamMembers.vue:6
 msgid "Add Members"
@@ -1516,6 +1515,7 @@ msgstr "Реакции"
 
 #. Label of a Check field in DocType 'GP Notification'
 #: frontend/src/pages/Notifications.vue:14
+#: frontend/src/pages/Notifications.vue:119
 #: gameplan/gameplan/doctype/gp_notification/gp_notification.json
 msgid "Read"
 msgstr "Прочитанные"
@@ -1977,6 +1977,7 @@ msgstr "Открепить обсуждение..."
 
 #: frontend/src/pages/Discussions.vue:173
 #: frontend/src/pages/Notifications.vue:14
+#: frontend/src/pages/Notifications.vue:95
 msgid "Unread"
 msgstr "Новые"
 

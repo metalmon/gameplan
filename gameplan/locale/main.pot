@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gameplan VERSION\n"
 "Report-Msgid-Bugs-To: faris@frappe.io\n"
-"POT-Creation-Date: 2024-12-11 17:51+0000\n"
-"PO-Revision-Date: 2024-12-11 17:51+0000\n"
+"POT-Creation-Date: 2024-12-11 23:14+0000\n"
+"PO-Revision-Date: 2024-12-11 23:14+0000\n"
 "Last-Translator: faris@frappe.io\n"
 "Language-Team: faris@frappe.io\n"
 "MIME-Version: 1.0\n"
@@ -1513,6 +1513,7 @@ msgstr ""
 
 #. Label of a Check field in DocType 'GP Notification'
 #: frontend/src/pages/Notifications.vue:14
+#: frontend/src/pages/Notifications.vue:119
 #: gameplan/gameplan/doctype/gp_notification/gp_notification.json
 msgid "Read"
 msgstr ""
@@ -1974,6 +1975,7 @@ msgstr ""
 
 #: frontend/src/pages/Discussions.vue:173
 #: frontend/src/pages/Notifications.vue:14
+#: frontend/src/pages/Notifications.vue:95
 msgid "Unread"
 msgstr ""
 
