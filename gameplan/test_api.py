@@ -2,11 +2,12 @@
 # MIT License. See license.txt
 
 import frappe
+from frappe import _
 
 
 def whitelist(fn):
 	if not frappe.conf.enable_ui_tests:
-		frappe.throw("Cannot run UI tests. Set 'enable_ui_tests' in site_config.json to continue.")
+		frappe.throw(_("Cannot run UI tests. Set 'enable_ui_tests' in site_config.json to continue."))
 
 	whitelisted = frappe.whitelist()(fn)
 	return whitelisted

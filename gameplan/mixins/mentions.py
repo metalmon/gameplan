@@ -3,6 +3,7 @@
 
 
 import frappe
+from frappe import _
 from frappe.utils import get_fullname
 
 from gameplan.utils import extract_mentions
@@ -37,8 +38,8 @@ class HasMentions:
 				continue
 			notification = frappe.get_doc(doctype="GP Notification")
 			if "GP Task" in [self.doctype, self.get("reference_doctype")]:
-				notification.message = f"{get_fullname(self.owner)} mentioned you in a task"
+				notification.message = _("{0} mentioned you in a task").format(get_fullname(self.owner))
 			elif "GP Discussion" in [self.doctype, self.get("reference_doctype")]:
-				notification.message = f"{get_fullname(self.owner)} mentioned you in a post"
+				notification.message = _("{0} mentioned you in a post").format(get_fullname(self.owner))
 			notification.update(values)
 			notification.insert(ignore_permissions=True)

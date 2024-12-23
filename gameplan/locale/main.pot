@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gameplan VERSION\n"
 "Report-Msgid-Bugs-To: faris@frappe.io\n"
-"POT-Creation-Date: 2024-12-11 23:14+0000\n"
-"PO-Revision-Date: 2024-12-11 23:14+0000\n"
+"POT-Creation-Date: 2024-12-23 17:45+0000\n"
+"PO-Revision-Date: 2024-12-23 17:45+0000\n"
 "Last-Translator: faris@frappe.io\n"
 "Language-Team: faris@frappe.io\n"
 "MIME-Version: 1.0\n"
@@ -24,6 +24,10 @@ msgstr ""
 msgid "1 participant"
 msgstr ""
 
+#: gameplan/mixins/reactions.py:22
+msgid "1 person reacted to your post"
+msgstr ""
+
 #: frontend/src/pages/PersonProfile.vue:77
 #: frontend/src/pages/PersonProfile.vue:189
 #: frontend/src/pages/PersonProfile.vue:197
@@ -32,6 +36,7 @@ msgid "About"
 msgstr ""
 
 #: gameplan/gameplan/doctype/gp_invitation/gp_invitation.js:7
+#: gameplan/templates/emails/gameplan_invitation.html:3
 msgid "Accept Invitation"
 msgstr ""
 
@@ -40,12 +45,12 @@ msgstr ""
 msgid "Accepted"
 msgstr ""
 
-#. Label of a Datetime field in DocType 'GP Invitation'
+#. Label of the accepted_at (Datetime) field in DocType 'GP Invitation'
 #: gameplan/gameplan/doctype/gp_invitation/gp_invitation.json
 msgid "Accepted At"
 msgstr ""
 
-#. Label of a Data field in DocType 'GP Activity'
+#. Label of the action (Data) field in DocType 'GP Activity'
 #: gameplan/gameplan/doctype/gp_activity/gp_activity.json
 msgid "Action"
 msgstr ""
@@ -117,7 +122,7 @@ msgstr ""
 msgid "All"
 msgstr ""
 
-#. Label of a Check field in DocType 'GP Poll'
+#. Label of the anonymous (Check) field in DocType 'GP Poll'
 #: frontend/src/components/Poll.vue:46
 #: frontend/src/components/PollEditor.vue:22
 #: gameplan/gameplan/doctype/gp_poll/gp_poll.json
@@ -149,15 +154,15 @@ msgstr ""
 msgid "Archived"
 msgstr ""
 
-#. Label of a Datetime field in DocType 'GP Project'
-#. Label of a Datetime field in DocType 'GP Team'
+#. Label of the archived_at (Datetime) field in DocType 'GP Project'
+#. Label of the archived_at (Datetime) field in DocType 'GP Team'
 #: gameplan/gameplan/doctype/gp_project/gp_project.json
 #: gameplan/gameplan/doctype/gp_team/gp_team.json
 msgid "Archived At"
 msgstr ""
 
-#. Label of a Link field in DocType 'GP Project'
-#. Label of a Link field in DocType 'GP Team'
+#. Label of the archived_by (Link) field in DocType 'GP Project'
+#. Label of the archived_by (Link) field in DocType 'GP Team'
 #: gameplan/gameplan/doctype/gp_project/gp_project.json
 #: gameplan/gameplan/doctype/gp_team/gp_team.json
 msgid "Archived By"
@@ -232,7 +237,7 @@ msgstr ""
 msgid "Assign this task"
 msgstr ""
 
-#. Label of a Link field in DocType 'GP Task'
+#. Label of the assigned_to (Link) field in DocType 'GP Task'
 #: gameplan/gameplan/doctype/gp_task/gp_task.json
 msgid "Assigned To"
 msgstr ""
@@ -247,13 +252,17 @@ msgstr ""
 msgid "Assignee"
 msgstr ""
 
+#: gameplan/api.py:31
+msgid "Authentication failed"
+msgstr ""
+
 #. Option for the 'Status' (Select) field in DocType 'GP Task'
 #: frontend/src/utils/statusLabels.js:3
 #: gameplan/gameplan/doctype/gp_task/gp_task.json
 msgid "Backlog"
 msgstr ""
 
-#. Label of a Data field in DocType 'GP User Profile'
+#. Label of the bio (Data) field in DocType 'GP User Profile'
 #: frontend/src/pages/PersonProfile.vue:104
 #: gameplan/gameplan/doctype/gp_user_profile/gp_user_profile.json
 msgid "Bio"
@@ -295,8 +304,16 @@ msgstr ""
 msgid "Canceled"
 msgstr ""
 
+#: gameplan/gameplan/doctype/gp_comment/gp_comment.py:25
+msgid "Cannot add comment to a closed discussion"
+msgstr ""
+
 #: gameplan/gameplan/doctype/gp_poll/gp_poll.py:73
 msgid "Cannot retract vote for anonymous poll"
+msgstr ""
+
+#: gameplan/test_api.py:10
+msgid "Cannot run UI tests. Set 'enable_ui_tests' in site_config.json to continue."
 msgstr ""
 
 #: frontend/src/components/ProfileImageEditor.vue:64
@@ -334,12 +351,12 @@ msgstr ""
 msgid "Close discussion..."
 msgstr ""
 
-#. Label of a Datetime field in DocType 'GP Discussion'
+#. Label of the closed_at (Datetime) field in DocType 'GP Discussion'
 #: gameplan/gameplan/doctype/gp_discussion/gp_discussion.json
 msgid "Closed At"
 msgstr ""
 
-#. Label of a Link field in DocType 'GP Discussion'
+#. Label of the closed_by (Link) field in DocType 'GP Discussion'
 #: gameplan/gameplan/doctype/gp_discussion/gp_discussion.json
 msgid "Closed By"
 msgstr ""
@@ -352,7 +369,7 @@ msgstr ""
 msgid "Coming soon"
 msgstr ""
 
-#. Label of a Link field in DocType 'GP Notification'
+#. Label of the comment (Link) field in DocType 'GP Notification'
 #: frontend/src/components/CommentsArea.vue:89
 #: gameplan/gameplan/doctype/gp_notification/gp_notification.json
 msgid "Comment"
@@ -362,8 +379,8 @@ msgstr ""
 msgid "Comment Options"
 msgstr ""
 
-#. Label of a Int field in DocType 'GP Discussion'
-#. Label of a Int field in DocType 'GP Task'
+#. Label of the comments_count (Int) field in DocType 'GP Discussion'
+#. Label of the comments_count (Int) field in DocType 'GP Task'
 #: gameplan/gameplan/doctype/gp_discussion/gp_discussion.json
 #: gameplan/gameplan/doctype/gp_task/gp_task.json
 msgid "Comments Count"
@@ -378,19 +395,19 @@ msgstr ""
 msgid "Completed"
 msgstr ""
 
-#. Label of a Datetime field in DocType 'GP Task'
+#. Label of the completed_at (Datetime) field in DocType 'GP Task'
 #: gameplan/gameplan/doctype/gp_task/gp_task.json
 msgid "Completed At"
 msgstr ""
 
-#. Label of a Data field in DocType 'GP Task'
+#. Label of the completed_by (Data) field in DocType 'GP Task'
 #: gameplan/gameplan/doctype/gp_task/gp_task.json
 msgid "Completed By"
 msgstr ""
 
-#. Label of a Text Editor field in DocType 'GP Comment'
-#. Label of a Text Editor field in DocType 'GP Discussion'
-#. Label of a Text Editor field in DocType 'GP Page'
+#. Label of the content (Text Editor) field in DocType 'GP Comment'
+#. Label of the content (Text Editor) field in DocType 'GP Discussion'
+#. Label of the content (Text Editor) field in DocType 'GP Page'
 #: gameplan/gameplan/doctype/gp_comment/gp_comment.json
 #: gameplan/gameplan/doctype/gp_discussion/gp_discussion.json
 #: gameplan/gameplan/doctype/gp_page/gp_page.json
@@ -403,16 +420,17 @@ msgstr ""
 msgid "Copy link"
 msgstr ""
 
-#. Label of a Attach Image field in DocType 'GP Team'
-#. Label of a Attach Image field in DocType 'GP User Profile'
-#. Label of a Section Break field in DocType 'GP User Profile'
+#. Label of the cover_image (Attach Image) field in DocType 'GP Team'
+#. Label of the cover_image (Attach Image) field in DocType 'GP User Profile'
+#. Label of the cover_image_section (Section Break) field in DocType 'GP User
+#. Profile'
 #: gameplan/gameplan/doctype/gp_team/gp_team.json
 #: gameplan/gameplan/doctype/gp_user_profile/gp_user_profile.json
 msgid "Cover Image"
 msgstr ""
 
-#. Label of a Float field in DocType 'GP Team'
-#. Label of a Float field in DocType 'GP User Profile'
+#. Label of the cover_image_position (Float) field in DocType 'GP Team'
+#. Label of the cover_image_position (Float) field in DocType 'GP User Profile'
 #: gameplan/gameplan/doctype/gp_team/gp_team.json
 #: gameplan/gameplan/doctype/gp_user_profile/gp_user_profile.json
 msgid "Cover Image Position"
@@ -440,7 +458,7 @@ msgstr ""
 msgid "Created by me"
 msgstr ""
 
-#. Label of a Code field in DocType 'GP Activity'
+#. Label of the data (Code) field in DocType 'GP Activity'
 #: gameplan/gameplan/doctype/gp_activity/gp_activity.json
 msgid "Data"
 msgstr ""
@@ -492,13 +510,13 @@ msgstr ""
 msgid "Delete task"
 msgstr ""
 
-#. Label of a Datetime field in DocType 'GP Comment'
+#. Label of the deleted_at (Datetime) field in DocType 'GP Comment'
 #: gameplan/gameplan/doctype/gp_comment/gp_comment.json
 msgid "Deleted At"
 msgstr ""
 
-#. Label of a Text Editor field in DocType 'GP Project'
-#. Label of a Text Editor field in DocType 'GP Task'
+#. Label of the description (Text Editor) field in DocType 'GP Project'
+#. Label of the description (Text Editor) field in DocType 'GP Task'
 #: frontend/src/components/NewTaskDialog.vue:20
 #: frontend/src/components/TaskDetail.vue:58
 #: gameplan/gameplan/doctype/gp_project/gp_project.json
@@ -526,7 +544,7 @@ msgstr ""
 msgid "Discard post"
 msgstr ""
 
-#. Label of a Data field in DocType 'Discourse ID Map'
+#. Label of the discourse_id (Data) field in DocType 'Discourse ID Map'
 #: gameplan/gameplan/doctype/discourse_id_map/discourse_id_map.json
 msgid "Discourse ID"
 msgstr ""
@@ -536,20 +554,45 @@ msgstr ""
 msgid "Discourse ID Map"
 msgstr ""
 
-#. Label of a Data field in DocType 'Discourse ID Map'
+#. Label of the discourse_table (Data) field in DocType 'Discourse ID Map'
 #: gameplan/gameplan/doctype/discourse_id_map/discourse_id_map.json
 msgid "Discourse Table"
 msgstr ""
 
-#. Label of a Link field in DocType 'GP Bookmark'
-#. Label of a Link field in DocType 'GP Discussion Visit'
-#. Label of a Link field in DocType 'GP Notification'
-#. Label of a Link field in DocType 'GP Poll'
+#. Label of the discussion (Link) field in DocType 'GP Bookmark'
+#. Label of the discussion (Link) field in DocType 'GP Discussion Visit'
+#. Label of the discussion (Link) field in DocType 'GP Notification'
+#. Label of the discussion (Link) field in DocType 'GP Poll'
 #: gameplan/gameplan/doctype/gp_bookmark/gp_bookmark.json
 #: gameplan/gameplan/doctype/gp_discussion_visit/gp_discussion_visit.json
 #: gameplan/gameplan/doctype/gp_notification/gp_notification.json
 #: gameplan/gameplan/doctype/gp_poll/gp_poll.json
 msgid "Discussion"
+msgstr ""
+
+#: gameplan/gameplan/doctype/gp_discussion/gp_discussion.py:20
+#: gameplan/gameplan/doctype/gp_discussion/gp_discussion.py:146
+msgid "Discussion Closed"
+msgstr ""
+
+#: gameplan/gameplan/doctype/gp_discussion/gp_discussion.py:23
+#: gameplan/gameplan/doctype/gp_discussion/gp_discussion.py:164
+msgid "Discussion Pinned"
+msgstr ""
+
+#: gameplan/gameplan/doctype/gp_discussion/gp_discussion.py:21
+#: gameplan/gameplan/doctype/gp_discussion/gp_discussion.py:155
+msgid "Discussion Reopened"
+msgstr ""
+
+#: gameplan/gameplan/doctype/gp_discussion/gp_discussion.py:22
+#: gameplan/gameplan/doctype/gp_discussion/gp_discussion.py:92
+msgid "Discussion Title Changed"
+msgstr ""
+
+#: gameplan/gameplan/doctype/gp_discussion/gp_discussion.py:24
+#: gameplan/gameplan/doctype/gp_discussion/gp_discussion.py:173
+msgid "Discussion Unpinned"
 msgstr ""
 
 #: frontend/src/components/AppSidebar.vue:190
@@ -562,7 +605,7 @@ msgstr ""
 msgid "Discussions"
 msgstr ""
 
-#. Label of a Int field in DocType 'GP Project'
+#. Label of the discussions_count (Int) field in DocType 'GP Project'
 #: gameplan/gameplan/doctype/gp_project/gp_project.json
 msgid "Discussions Count"
 msgstr ""
@@ -585,7 +628,7 @@ msgstr ""
 msgid "Drag up/down to reposition image"
 msgstr ""
 
-#. Label of a Date field in DocType 'GP Task'
+#. Label of the due_date (Date) field in DocType 'GP Task'
 #: frontend/src/components/TaskDetail.vue:125
 #: gameplan/gameplan/doctype/gp_task/gp_task.json
 msgid "Due Date"
@@ -624,7 +667,7 @@ msgstr ""
 msgid "Edited"
 msgstr ""
 
-#. Label of a Data field in DocType 'GP Invitation'
+#. Label of the email (Data) field in DocType 'GP Invitation'
 #: frontend/src/components/InviteGuestDialog.vue:24
 #: frontend/src/pages/Login.vue:21
 #: frontend/src/pages/OnboardingStepInvites.vue:6
@@ -632,17 +675,17 @@ msgstr ""
 msgid "Email"
 msgstr ""
 
-#. Label of a Datetime field in DocType 'GP Invitation'
+#. Label of the email_sent_at (Datetime) field in DocType 'GP Invitation'
 #: gameplan/gameplan/doctype/gp_invitation/gp_invitation.json
 msgid "Email Sent At"
 msgstr ""
 
-#. Label of a Data field in DocType 'GP Reaction'
+#. Label of the emoji (Data) field in DocType 'GP Reaction'
 #: gameplan/gameplan/doctype/gp_reaction/gp_reaction.json
 msgid "Emoji"
 msgstr ""
 
-#. Label of a Check field in DocType 'GP User Profile'
+#. Label of the enabled (Check) field in DocType 'GP User Profile'
 #: gameplan/gameplan/doctype/gp_user_profile/gp_user_profile.json
 msgid "Enabled"
 msgstr ""
@@ -702,12 +745,12 @@ msgstr ""
 msgid "Following"
 msgstr ""
 
-#. Label of a Link field in DocType 'GP Notification'
+#. Label of the from_user (Link) field in DocType 'GP Notification'
 #: gameplan/gameplan/doctype/gp_notification/gp_notification.json
 msgid "From User"
 msgstr ""
 
-#. Label of a Data field in DocType 'GP User Profile'
+#. Label of the full_name (Data) field in DocType 'GP User Profile'
 #: gameplan/gameplan/doctype/gp_user_profile/gp_user_profile.json
 msgid "Full Name"
 msgstr ""
@@ -728,9 +771,7 @@ msgid "GP Comment"
 msgstr ""
 
 #. Name of a DocType
-#. Linked DocType in GP Project's connections
 #: gameplan/gameplan/doctype/gp_discussion/gp_discussion.json
-#: gameplan/gameplan/doctype/gp_project/gp_project.json
 msgid "GP Discussion"
 msgstr ""
 
@@ -804,9 +845,7 @@ msgstr ""
 msgid "GP Reaction"
 msgstr ""
 
-#. Linked DocType in GP Project's connections
 #. Name of a DocType
-#: gameplan/gameplan/doctype/gp_project/gp_project.json
 #: gameplan/gameplan/doctype/gp_task/gp_task.json
 msgid "GP Task"
 msgstr ""
@@ -888,6 +927,10 @@ msgstr ""
 msgid "Gameplan Member"
 msgstr ""
 
+#: gameplan/gameplan/doctype/gp_project/gp_project.py:113
+msgid "Group {0} cannot be deleted because it has {1} tasks"
+msgstr ""
+
 #: frontend/src/components/Settings/InvitePeople.vue:25
 #: frontend/src/components/Settings/Members.vue:143
 #: frontend/src/components/Settings/Members.vue:178
@@ -908,24 +951,25 @@ msgstr ""
 msgid "Home"
 msgstr ""
 
-#. Label of a Data field in DocType 'GP Project'
-#. Label of a Data field in DocType 'GP Team'
+#. Label of the icon (Data) field in DocType 'GP Project'
+#. Label of the icon (Data) field in DocType 'GP Team'
 #: gameplan/gameplan/doctype/gp_project/gp_project.json
 #: gameplan/gameplan/doctype/gp_team/gp_team.json
 msgid "Icon"
 msgstr ""
 
-#. Label of a Attach Image field in DocType 'GP User Profile'
+#. Label of the image (Attach Image) field in DocType 'GP User Profile'
 #: gameplan/gameplan/doctype/gp_user_profile/gp_user_profile.json
 msgid "Image"
 msgstr ""
 
-#. Label of a Color field in DocType 'GP User Profile'
+#. Label of the image_background_color (Color) field in DocType 'GP User
+#. Profile'
 #: gameplan/gameplan/doctype/gp_user_profile/gp_user_profile.json
 msgid "Image Background Color"
 msgstr ""
 
-#: frontend/src/components/UnsplashImageBrowser.vue:41
+#: frontend/src/components/UnsplashImageBrowser.vue:42
 msgid "Image search powered by"
 msgstr ""
 
@@ -935,9 +979,22 @@ msgstr ""
 msgid "In Progress"
 msgstr ""
 
-#. Label of a Int field in DocType 'GP Task'
+#. Label of the idx (Int) field in DocType 'GP Task'
 #: gameplan/gameplan/doctype/gp_task/gp_task.json
 msgid "Index"
+msgstr ""
+
+#: gameplan/gameplan/doctype/gp_discussion/api.py:124
+msgid "Insufficient Permission for GP Discussion"
+msgstr ""
+
+#: gameplan/gameplan/doctype/gp_project/gp_project.py:170
+msgid "Invalid Project \"{0}\""
+msgstr ""
+
+#: gameplan/api.py:156 gameplan/api.py:160
+#: gameplan/gameplan/doctype/gp_invitation/gp_invitation.py:50
+msgid "Invalid or expired key"
 msgstr ""
 
 #: frontend/src/pages/TeamLayout.vue:10
@@ -965,7 +1022,7 @@ msgstr ""
 msgid "Invite people you work with"
 msgstr ""
 
-#. Label of a Link field in DocType 'GP Invitation'
+#. Label of the invited_by (Link) field in DocType 'GP Invitation'
 #: gameplan/gameplan/doctype/gp_invitation/gp_invitation.json
 msgid "Invited By"
 msgstr ""
@@ -974,23 +1031,24 @@ msgstr ""
 msgid "Invites"
 msgstr ""
 
-#. Label of a Check field in DocType 'GP Task'
+#. Label of the is_completed (Check) field in DocType 'GP Task'
 #: gameplan/gameplan/doctype/gp_task/gp_task.json
 msgid "Is Completed"
 msgstr ""
 
-#. Label of a Check field in DocType 'GP Project'
+#. Label of the is_followed (Check) field in DocType 'GP Project'
 #: gameplan/gameplan/doctype/gp_project/gp_project.json
 msgid "Is Followed"
 msgstr ""
 
-#. Label of a Check field in DocType 'GP User Profile'
+#. Label of the is_image_background_removed (Check) field in DocType 'GP User
+#. Profile'
 #: gameplan/gameplan/doctype/gp_user_profile/gp_user_profile.json
 msgid "Is Image Background Removed"
 msgstr ""
 
-#. Label of a Check field in DocType 'GP Project'
-#. Label of a Check field in DocType 'GP Team'
+#. Label of the is_private (Check) field in DocType 'GP Project'
+#. Label of the is_private (Check) field in DocType 'GP Team'
 #: gameplan/gameplan/doctype/gp_project/gp_project.json
 #: gameplan/gameplan/doctype/gp_team/gp_team.json
 msgid "Is Private"
@@ -1008,7 +1066,7 @@ msgstr ""
 msgid "Keep post"
 msgstr ""
 
-#. Label of a Data field in DocType 'GP Invitation'
+#. Label of the key (Data) field in DocType 'GP Invitation'
 #: gameplan/gameplan/doctype/gp_invitation/gp_invitation.json
 msgid "Key"
 msgstr ""
@@ -1017,18 +1075,18 @@ msgstr ""
 msgid "Last Name"
 msgstr ""
 
-#. Label of a Datetime field in DocType 'GP Discussion'
+#. Label of the last_post_at (Datetime) field in DocType 'GP Discussion'
 #: gameplan/gameplan/doctype/gp_discussion/gp_discussion.json
 msgid "Last Post At"
 msgstr ""
 
-#. Label of a Link field in DocType 'GP Discussion'
+#. Label of the last_post_by (Link) field in DocType 'GP Discussion'
 #: gameplan/gameplan/doctype/gp_discussion/gp_discussion.json
 msgid "Last Post By"
 msgstr ""
 
-#. Label of a Datetime field in DocType 'GP Discussion Visit'
-#. Label of a Datetime field in DocType 'GP Project Visit'
+#. Label of the last_visit (Datetime) field in DocType 'GP Discussion Visit'
+#. Label of the last_visit (Datetime) field in DocType 'GP Project Visit'
 #: gameplan/gameplan/doctype/gp_discussion_visit/gp_discussion_visit.json
 #: gameplan/gameplan/doctype/gp_project_visit/gp_project_visit.json
 msgid "Last Visit"
@@ -1112,8 +1170,8 @@ msgstr ""
 msgid "Member"
 msgstr ""
 
-#. Label of a Table field in DocType 'GP Project'
-#. Label of a Table field in DocType 'GP Team'
+#. Label of the members (Table) field in DocType 'GP Project'
+#. Label of the members (Table) field in DocType 'GP Team'
 #: frontend/src/components/Settings/SettingsDialog.vue:47
 #: gameplan/gameplan/doctype/gp_project/gp_project.json
 #: gameplan/gameplan/doctype/gp_team/gp_team.json
@@ -1129,7 +1187,7 @@ msgstr ""
 msgid "Merge with another project"
 msgstr ""
 
-#. Label of a Text Editor field in DocType 'GP Notification'
+#. Label of the message (Text Editor) field in DocType 'GP Notification'
 #: gameplan/gameplan/doctype/gp_notification/gp_notification.json
 msgid "Message"
 msgstr ""
@@ -1163,7 +1221,7 @@ msgstr ""
 msgid "Move to..."
 msgstr ""
 
-#. Label of a Check field in DocType 'GP Poll'
+#. Label of the multiple_answers (Check) field in DocType 'GP Poll'
 #: gameplan/gameplan/doctype/gp_poll/gp_poll.json
 msgid "Multiple Answers"
 msgstr ""
@@ -1245,7 +1303,11 @@ msgstr ""
 msgid "No user found."
 msgstr ""
 
-#: frontend/src/pages/Notifications.vue:73
+#: gameplan/gameplan/doctype/gp_team/gp_team.py:22
+msgid "Not permitted"
+msgstr ""
+
+#: frontend/src/pages/Notifications.vue:54
 msgid "Nothing to see here"
 msgstr ""
 
@@ -1253,7 +1315,6 @@ msgstr ""
 #: frontend/src/components/CommandPalette/CommandPalette.vue:284
 #: frontend/src/components/MobileLayout.vue:82
 #: frontend/src/pages/Notifications.vue:4
-#: frontend/src/pages/Notifications.vue:89
 msgid "Notifications"
 msgstr ""
 
@@ -1261,11 +1322,15 @@ msgstr ""
 msgid "Ongoing poll"
 msgstr ""
 
+#: gameplan/api.py:81
+msgid "Only Admin can change user roles"
+msgstr ""
+
 #: frontend/src/components/ProfileImageEditor.vue:90
 msgid "Only PNG and JPG images are allowed"
 msgstr ""
 
-#: gameplan/gameplan/doctype/gp_poll/gp_poll.py:88
+#: gameplan/gameplan/doctype/gp_poll/gp_poll.py:84
 msgid "Only owner can stop the poll"
 msgstr ""
 
@@ -1274,25 +1339,26 @@ msgstr ""
 msgid "Open"
 msgstr ""
 
-#. Label of a Data field in DocType 'GP Poll Vote'
+#. Label of the option (Data) field in DocType 'GP Poll Vote'
 #: frontend/src/components/PollEditor.vue:15
 #: gameplan/gameplan/doctype/gp_poll_vote/gp_poll_vote.json
 msgid "Option"
 msgstr ""
 
-#. Label of a Table field in DocType 'GP Poll'
+#. Label of the options (Table) field in DocType 'GP Poll'
 #: frontend/src/components/PollEditor.vue:11 frontend/src/pages/Project.vue:49
 #: frontend/src/pages/Team.vue:49
 #: gameplan/gameplan/doctype/gp_poll/gp_poll.json
 msgid "Options"
 msgstr ""
 
-#. Label of a Int field in DocType 'GP Pinned Project'
+#. Label of the order (Int) field in DocType 'GP Pinned Project'
 #: gameplan/gameplan/doctype/gp_pinned_project/gp_pinned_project.json
 msgid "Order"
 msgstr ""
 
-#. Label of a Attach Image field in DocType 'GP User Profile'
+#. Label of the original_image (Attach Image) field in DocType 'GP User
+#. Profile'
 #: gameplan/gameplan/doctype/gp_user_profile/gp_user_profile.json
 msgid "Original Image"
 msgstr ""
@@ -1311,7 +1377,7 @@ msgstr ""
 msgid "Pages"
 msgstr ""
 
-#. Label of a Int field in DocType 'GP Discussion'
+#. Label of the participants_count (Int) field in DocType 'GP Discussion'
 #: gameplan/gameplan/doctype/gp_discussion/gp_discussion.json
 msgid "Participants Count"
 msgstr ""
@@ -1338,7 +1404,7 @@ msgstr ""
 msgid "People"
 msgstr ""
 
-#. Label of a Percent field in DocType 'GP Poll Option'
+#. Label of the percentage (Percent) field in DocType 'GP Poll Option'
 #: gameplan/gameplan/doctype/gp_poll_option/gp_poll_option.json
 msgid "Percentage"
 msgstr ""
@@ -1355,12 +1421,12 @@ msgstr ""
 msgid "Pin discussion..."
 msgstr ""
 
-#. Label of a Datetime field in DocType 'GP Discussion'
+#. Label of the pinned_at (Datetime) field in DocType 'GP Discussion'
 #: gameplan/gameplan/doctype/gp_discussion/gp_discussion.json
 msgid "Pinned At"
 msgstr ""
 
-#. Label of a Link field in DocType 'GP Discussion'
+#. Label of the pinned_by (Link) field in DocType 'GP Discussion'
 #: gameplan/gameplan/doctype/gp_discussion/gp_discussion.json
 msgid "Pinned By"
 msgstr ""
@@ -1381,6 +1447,10 @@ msgstr ""
 msgid "Please select a team"
 msgstr ""
 
+#: gameplan/unsplash.py:29
+msgid "Please set unsplash_access_key in site_config.json"
+msgstr ""
+
 #: frontend/src/components/CommentsArea.vue:89
 msgid "Poll"
 msgstr ""
@@ -1389,7 +1459,7 @@ msgstr ""
 msgid "Poll Options"
 msgstr ""
 
-#: gameplan/gameplan/doctype/gp_poll/gp_poll.py:94
+#: gameplan/gameplan/doctype/gp_poll/gp_poll.py:90
 msgid "Poll has ended"
 msgstr ""
 
@@ -1409,7 +1479,7 @@ msgstr ""
 msgid "Previous"
 msgstr ""
 
-#. Label of a Select field in DocType 'GP Task'
+#. Label of the priority (Select) field in DocType 'GP Task'
 #: frontend/src/components/TaskDetail.vue:159
 #: gameplan/gameplan/doctype/gp_task/gp_task.json
 msgid "Priority"
@@ -1427,24 +1497,29 @@ msgstr ""
 msgid "Profile"
 msgstr ""
 
-#. Label of a Section Break field in DocType 'GP User Profile'
+#. Label of the profile_image_section (Section Break) field in DocType 'GP User
+#. Profile'
 #: gameplan/gameplan/doctype/gp_user_profile/gp_user_profile.json
 msgid "Profile Image"
 msgstr ""
 
-#. Label of a Percent field in DocType 'GP Project'
+#: gameplan/gameplan/doctype/gp_user_profile/gp_user_profile.py:38
+msgid "Profile image not found"
+msgstr ""
+
+#. Label of the progress (Percent) field in DocType 'GP Project'
 #: gameplan/gameplan/doctype/gp_project/gp_project.json
 msgid "Progress"
 msgstr ""
 
-#. Label of a Link field in DocType 'GP Discussion'
-#. Label of a Link field in DocType 'GP Followed Project'
-#. Label of a Link field in DocType 'GP Guest Access'
-#. Label of a Link field in DocType 'GP Notification'
-#. Label of a Link field in DocType 'GP Page'
-#. Label of a Link field in DocType 'GP Pinned Project'
-#. Label of a Link field in DocType 'GP Project Visit'
-#. Label of a Link field in DocType 'GP Task'
+#. Label of the project (Link) field in DocType 'GP Discussion'
+#. Label of the project (Link) field in DocType 'GP Followed Project'
+#. Label of the project (Link) field in DocType 'GP Guest Access'
+#. Label of the project (Link) field in DocType 'GP Notification'
+#. Label of the project (Link) field in DocType 'GP Page'
+#. Label of the project (Link) field in DocType 'GP Pinned Project'
+#. Label of the project (Link) field in DocType 'GP Project Visit'
+#. Label of the project (Link) field in DocType 'GP Task'
 #: frontend/src/components/TaskDetail.vue:139
 #: gameplan/gameplan/doctype/gp_discussion/gp_discussion.json
 #: gameplan/gameplan/doctype/gp_followed_project/gp_followed_project.json
@@ -1461,6 +1536,10 @@ msgstr ""
 msgid "Project Name"
 msgstr ""
 
+#: gameplan/gameplan/doctype/gp_invitation/gp_invitation.py:13
+msgid "Project is required to invite as Guest"
+msgstr ""
+
 #: frontend/src/components/DiscussionView.vue:222
 msgid "Project is required to move this discussion"
 msgstr ""
@@ -1469,7 +1548,11 @@ msgstr ""
 msgid "Project title"
 msgstr ""
 
-#. Label of a Small Text field in DocType 'GP Invitation'
+#: gameplan/mixins/manage_members.py:39
+msgid "Project: {0}"
+msgstr ""
+
+#. Label of the projects (Small Text) field in DocType 'GP Invitation'
 #: frontend/src/components/CommandPalette/CommandPalette.vue:309
 #: frontend/src/pages/TeamOverview.vue:14
 #: gameplan/gameplan/doctype/gp_invitation/gp_invitation.json
@@ -1502,25 +1585,24 @@ msgstr ""
 msgid "Reaction"
 msgstr ""
 
-#. Label of a Table field in DocType 'GP Comment'
-#. Label of a Table field in DocType 'GP Discussion'
-#. Label of a Table field in DocType 'GP Poll'
+#. Label of the reactions (Table) field in DocType 'GP Comment'
+#. Label of the reactions (Table) field in DocType 'GP Discussion'
+#. Label of the reactions (Table) field in DocType 'GP Poll'
 #: gameplan/gameplan/doctype/gp_comment/gp_comment.json
 #: gameplan/gameplan/doctype/gp_discussion/gp_discussion.json
 #: gameplan/gameplan/doctype/gp_poll/gp_poll.json
 msgid "Reactions"
 msgstr ""
 
-#. Label of a Check field in DocType 'GP Notification'
+#. Label of the read (Check) field in DocType 'GP Notification'
 #: frontend/src/pages/Notifications.vue:14
-#: frontend/src/pages/Notifications.vue:119
 #: gameplan/gameplan/doctype/gp_notification/gp_notification.json
 msgid "Read"
 msgstr ""
 
-#. Label of a Text Editor field in DocType 'GP Project'
-#. Label of a Text Editor field in DocType 'GP Team'
-#. Label of a Text Editor field in DocType 'GP User Profile'
+#. Label of the readme (Text Editor) field in DocType 'GP Project'
+#. Label of the readme (Text Editor) field in DocType 'GP Team'
+#. Label of the readme (Text Editor) field in DocType 'GP User Profile'
 #: gameplan/gameplan/doctype/gp_project/gp_project.json
 #: gameplan/gameplan/doctype/gp_team/gp_team.json
 #: gameplan/gameplan/doctype/gp_user_profile/gp_user_profile.json
@@ -1531,18 +1613,18 @@ msgstr ""
 msgid "Recent"
 msgstr ""
 
-#. Label of a Data field in DocType 'Discourse ID Map'
-#. Label of a Link field in DocType 'GP Activity'
-#. Label of a Link field in DocType 'GP Comment'
+#. Label of the reference_doctype (Data) field in DocType 'Discourse ID Map'
+#. Label of the reference_doctype (Link) field in DocType 'GP Activity'
+#. Label of the reference_doctype (Link) field in DocType 'GP Comment'
 #: gameplan/gameplan/doctype/discourse_id_map/discourse_id_map.json
 #: gameplan/gameplan/doctype/gp_activity/gp_activity.json
 #: gameplan/gameplan/doctype/gp_comment/gp_comment.json
 msgid "Reference DocType"
 msgstr ""
 
-#. Label of a Data field in DocType 'Discourse ID Map'
-#. Label of a Dynamic Link field in DocType 'GP Activity'
-#. Label of a Dynamic Link field in DocType 'GP Comment'
+#. Label of the reference_name (Data) field in DocType 'Discourse ID Map'
+#. Label of the reference_name (Dynamic Link) field in DocType 'GP Activity'
+#. Label of the reference_name (Dynamic Link) field in DocType 'GP Comment'
 #: gameplan/gameplan/doctype/discourse_id_map/discourse_id_map.json
 #: gameplan/gameplan/doctype/gp_activity/gp_activity.json
 #: gameplan/gameplan/doctype/gp_comment/gp_comment.json
@@ -1601,7 +1683,7 @@ msgstr ""
 msgid "Revisions"
 msgstr ""
 
-#. Label of a Select field in DocType 'GP Invitation'
+#. Label of the role (Select) field in DocType 'GP Invitation'
 #: frontend/src/components/Settings/InvitePeople.vue:20
 #: gameplan/gameplan/doctype/gp_invitation/gp_invitation.json
 msgid "Role"
@@ -1711,8 +1793,8 @@ msgstr ""
 msgid "Show results"
 msgstr ""
 
-#. Label of a Data field in DocType 'GP Discussion'
-#. Label of a Data field in DocType 'GP Page'
+#. Label of the slug (Data) field in DocType 'GP Discussion'
+#. Label of the slug (Data) field in DocType 'GP Page'
 #: gameplan/gameplan/doctype/gp_discussion/gp_discussion.json
 #: gameplan/gameplan/doctype/gp_page/gp_page.json
 msgid "Slug"
@@ -1726,7 +1808,7 @@ msgstr ""
 msgid "Sort by"
 msgstr ""
 
-#. Label of a Date field in DocType 'GP Task'
+#. Label of the start_date (Date) field in DocType 'GP Task'
 #: gameplan/gameplan/doctype/gp_task/gp_task.json
 msgid "Start Date"
 msgstr ""
@@ -1735,16 +1817,20 @@ msgstr ""
 msgid "Start writing here..."
 msgstr ""
 
-#. Label of a Data field in DocType 'GP Discussion'
-#. Label of a Select field in DocType 'GP Invitation'
-#. Label of a Select field in DocType 'GP Project'
-#. Label of a Select field in DocType 'GP Task'
+#. Label of the status (Data) field in DocType 'GP Discussion'
+#. Label of the status (Select) field in DocType 'GP Invitation'
+#. Label of the status (Select) field in DocType 'GP Project'
+#. Label of the status (Select) field in DocType 'GP Task'
 #: frontend/src/components/TaskDetail.vue:148
 #: gameplan/gameplan/doctype/gp_discussion/gp_discussion.json
 #: gameplan/gameplan/doctype/gp_invitation/gp_invitation.json
 #: gameplan/gameplan/doctype/gp_project/gp_project.json
 #: gameplan/gameplan/doctype/gp_task/gp_task.json
 msgid "Status"
+msgstr ""
+
+#: frontend/src/pages/Onboarding.vue:17
+msgid "Step {0} of {1}"
 msgstr ""
 
 #: frontend/src/components/Poll.vue:196
@@ -1759,7 +1845,7 @@ msgstr ""
 msgid "Stop poll"
 msgstr ""
 
-#. Label of a Datetime field in DocType 'GP Poll'
+#. Label of the stopped_at (Datetime) field in DocType 'GP Poll'
 #: gameplan/gameplan/doctype/gp_poll/gp_poll.json
 msgid "Stopped At"
 msgstr ""
@@ -1795,7 +1881,7 @@ msgstr ""
 msgid "System Manager"
 msgstr ""
 
-#. Label of a Link field in DocType 'GP Notification'
+#. Label of the task (Link) field in DocType 'GP Notification'
 #: gameplan/gameplan/doctype/gp_notification/gp_notification.json
 msgid "Task"
 msgstr ""
@@ -1818,20 +1904,20 @@ msgstr ""
 msgid "Tasks"
 msgstr ""
 
-#. Label of a Int field in DocType 'GP Project'
+#. Label of the tasks_count (Int) field in DocType 'GP Project'
 #: gameplan/gameplan/doctype/gp_project/gp_project.json
 msgid "Tasks Count"
 msgstr ""
 
-#. Label of a Link field in DocType 'GP Discussion'
-#. Label of a Link field in DocType 'GP Followed Project'
-#. Label of a Link field in DocType 'GP Guest Access'
-#. Label of a Link field in DocType 'GP Notification'
-#. Label of a Link field in DocType 'GP Page'
-#. Label of a Link field in DocType 'GP Pinned Project'
-#. Label of a Link field in DocType 'GP Project'
-#. Label of a Link field in DocType 'GP Project Visit'
-#. Label of a Link field in DocType 'GP Task'
+#. Label of the team (Link) field in DocType 'GP Discussion'
+#. Label of the team (Link) field in DocType 'GP Followed Project'
+#. Label of the team (Link) field in DocType 'GP Guest Access'
+#. Label of the team (Link) field in DocType 'GP Notification'
+#. Label of the team (Link) field in DocType 'GP Page'
+#. Label of the team (Link) field in DocType 'GP Pinned Project'
+#. Label of the team (Link) field in DocType 'GP Project'
+#. Label of the team (Link) field in DocType 'GP Project Visit'
+#. Label of the team (Link) field in DocType 'GP Task'
 #: gameplan/gameplan/doctype/gp_discussion/gp_discussion.json
 #: gameplan/gameplan/doctype/gp_followed_project/gp_followed_project.json
 #: gameplan/gameplan/doctype/gp_guest_access/gp_guest_access.json
@@ -1853,7 +1939,11 @@ msgstr ""
 msgid "Team is required to move this project"
 msgstr ""
 
-#. Label of a Small Text field in DocType 'GP Invitation'
+#: gameplan/mixins/manage_members.py:39
+msgid "Team: {0}"
+msgstr ""
+
+#. Label of the teams (Small Text) field in DocType 'GP Invitation'
 #: frontend/src/components/AppSidebar.vue:66
 #: frontend/src/components/CommandPalette/CommandPalette.vue:308
 #: frontend/src/components/MobileLayout.vue:53 frontend/src/pages/Teams.vue:5
@@ -1874,8 +1964,16 @@ msgstr ""
 msgid "This message is deleted"
 msgstr ""
 
+#: gameplan/www/g.py:26
+msgid "This method is only meant for developer mode"
+msgstr ""
+
 #: frontend/src/components/Poll.vue:169
 msgid "This poll is anonymous. Once you vote, you cannot retract your vote. You are voting for \"{option}\". Continue?"
+msgstr ""
+
+#: gameplan/gameplan/doctype/gp_pinned_project/gp_pinned_project.py:27
+msgid "This project is already pinned"
 msgstr ""
 
 #: frontend/src/pages/Project.vue:18
@@ -1890,13 +1988,13 @@ msgstr ""
 msgid "This will move all discussions, tasks, and pages from the {0} project to the selected project. This change is irreversible!"
 msgstr ""
 
-#. Label of a Data field in DocType 'GP Discussion'
-#. Label of a Data field in DocType 'GP Page'
-#. Label of a Data field in DocType 'GP Poll'
-#. Label of a Data field in DocType 'GP Poll Option'
-#. Label of a Data field in DocType 'GP Project'
-#. Label of a Data field in DocType 'GP Task'
-#. Label of a Data field in DocType 'GP Team'
+#. Label of the title (Data) field in DocType 'GP Discussion'
+#. Label of the title (Data) field in DocType 'GP Page'
+#. Label of the title (Data) field in DocType 'GP Poll'
+#. Label of the title (Data) field in DocType 'GP Poll Option'
+#. Label of the title (Data) field in DocType 'GP Project'
+#. Label of the title (Data) field in DocType 'GP Task'
+#. Label of the title (Data) field in DocType 'GP Team'
 #: frontend/src/components/DiscussionView.vue:75
 #: frontend/src/components/NewTaskDialog.vue:19
 #: frontend/src/components/TaskDetail.vue:12 frontend/src/pages/Project.vue:125
@@ -1911,7 +2009,7 @@ msgstr ""
 msgid "Title"
 msgstr ""
 
-#. Label of a Link field in DocType 'GP Notification'
+#. Label of the to_user (Link) field in DocType 'GP Notification'
 #: gameplan/gameplan/doctype/gp_notification/gp_notification.json
 msgid "To User"
 msgstr ""
@@ -1926,7 +2024,7 @@ msgstr ""
 msgid "Toggle theme"
 msgstr ""
 
-#. Label of a Int field in DocType 'GP Poll'
+#. Label of the total_votes (Int) field in DocType 'GP Poll'
 #: gameplan/gameplan/doctype/gp_poll/gp_poll.json
 msgid "Total Votes"
 msgstr ""
@@ -1935,7 +2033,7 @@ msgstr ""
 msgid "Total: {0}"
 msgstr ""
 
-#. Label of a Select field in DocType 'GP Notification'
+#. Label of the type (Select) field in DocType 'GP Notification'
 #: gameplan/gameplan/doctype/gp_notification/gp_notification.json
 msgid "Type"
 msgstr ""
@@ -1975,7 +2073,6 @@ msgstr ""
 
 #: frontend/src/pages/Discussions.vue:173
 #: frontend/src/pages/Notifications.vue:14
-#: frontend/src/pages/Notifications.vue:95
 msgid "Unread"
 msgstr ""
 
@@ -1992,9 +2089,13 @@ msgid "Updated {time}"
 msgstr ""
 
 #: frontend/src/components/ProfileImageEditor.vue:19
-#: frontend/src/components/UnsplashImageBrowser.vue:24
+#: frontend/src/components/UnsplashImageBrowser.vue:25
 #: frontend/src/pages/PersonProfile.vue:56
 msgid "Upload Image"
+msgstr ""
+
+#: frontend/src/components/UnsplashImageBrowser.vue:25
+msgid "Uploading"
 msgstr ""
 
 #: frontend/src/components/ProfileImageEditor.vue:16
@@ -2006,18 +2107,18 @@ msgstr ""
 msgid "Urgent"
 msgstr ""
 
-#. Label of a Link field in DocType 'GP Activity'
-#. Label of a Link field in DocType 'GP Bookmark'
-#. Label of a Link field in DocType 'GP Discussion Visit'
-#. Label of a Link field in DocType 'GP Followed Project'
-#. Label of a Link field in DocType 'GP Guest Access'
-#. Label of a Link field in DocType 'GP Member'
-#. Label of a Link field in DocType 'GP Page'
-#. Label of a Link field in DocType 'GP Pinned Project'
-#. Label of a Link field in DocType 'GP Poll Vote'
-#. Label of a Link field in DocType 'GP Project Visit'
-#. Label of a Data field in DocType 'GP Reaction'
-#. Label of a Link field in DocType 'GP User Profile'
+#. Label of the user (Link) field in DocType 'GP Activity'
+#. Label of the user (Link) field in DocType 'GP Bookmark'
+#. Label of the user (Link) field in DocType 'GP Discussion Visit'
+#. Label of the user (Link) field in DocType 'GP Followed Project'
+#. Label of the user (Link) field in DocType 'GP Guest Access'
+#. Label of the user (Link) field in DocType 'GP Member'
+#. Label of the user (Link) field in DocType 'GP Page'
+#. Label of the user (Link) field in DocType 'GP Pinned Project'
+#. Label of the user (Link) field in DocType 'GP Poll Vote'
+#. Label of the user (Link) field in DocType 'GP Project Visit'
+#. Label of the user (Data) field in DocType 'GP Reaction'
+#. Label of the user (Link) field in DocType 'GP User Profile'
 #: gameplan/gameplan/doctype/gp_activity/gp_activity.json
 #: gameplan/gameplan/doctype/gp_bookmark/gp_bookmark.json
 #: gameplan/gameplan/doctype/gp_discussion_visit/gp_discussion_visit.json
@@ -2037,11 +2138,11 @@ msgstr ""
 msgid "User is disabled"
 msgstr ""
 
-#: frontend/src/pages/Notifications.vue:61
+#: frontend/src/pages/Notifications.vue:40
 msgid "View Discussion"
 msgstr ""
 
-#: frontend/src/pages/Notifications.vue:61
+#: frontend/src/pages/Notifications.vue:40
 msgid "View Task"
 msgstr ""
 
@@ -2071,11 +2172,16 @@ msgstr ""
 msgid "Vote for \"{option}\""
 msgstr ""
 
-#. Label of a Table field in DocType 'GP Poll'
-#. Label of a Int field in DocType 'GP Poll Option'
+#. Label of the votes (Table) field in DocType 'GP Poll'
+#. Label of the votes (Int) field in DocType 'GP Poll Option'
 #: gameplan/gameplan/doctype/gp_poll/gp_poll.json
 #: gameplan/gameplan/doctype/gp_poll_option/gp_poll_option.json
 msgid "Votes"
+msgstr ""
+
+#: gameplan/gameplan/doctype/gp_project/gp_project.py:79
+#: gameplan/gameplan/doctype/gp_team/gp_team.py:58
+msgid "Welcome to the {0}!"
 msgstr ""
 
 #: frontend/src/components/DiscussionView.vue:384
@@ -2100,6 +2206,23 @@ msgstr ""
 
 #: frontend/src/pages/ProjectDiscussionNew.vue:72
 msgid "Write something..."
+msgstr ""
+
+#: gameplan/gameplan/doctype/gp_team/gp_team.py:59
+msgid "You can add a brief introduction about the team, important links, resources, and other important information here."
+msgstr ""
+
+#: gameplan/gameplan/doctype/gp_project/gp_project.py:80
+msgid "You can add a brief introduction about this project, links, resources, and other important information here."
+msgstr ""
+
+#: gameplan/templates/emails/gameplan_invitation.html:1
+msgid "You have been invited to join Gameplan"
+msgstr ""
+
+#: gameplan/gameplan/doctype/gp_invitation/gp_invitation.py:36
+#: gameplan/mixins/manage_members.py:45
+msgid "You have been invited to join {0}"
 msgstr ""
 
 #: frontend/src/components/Activity.vue:39
@@ -2184,6 +2307,19 @@ msgstr ""
 msgid "votes"
 msgstr ""
 
+#: gameplan/mixins/mentions.py:43
+msgid "{0} mentioned you in a post"
+msgstr ""
+
+#: gameplan/mixins/mentions.py:41
+msgid "{0} mentioned you in a task"
+msgstr ""
+
+#: gameplan/mixins/reactions.py:24
+msgid "{0} people reacted to your post"
+msgstr ""
+
 #: frontend/src/components/RevisionsDialog.vue:126
 msgid "{count} Revisions"
 msgstr ""
+

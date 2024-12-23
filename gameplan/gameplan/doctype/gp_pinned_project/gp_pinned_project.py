@@ -2,6 +2,7 @@
 # For license information, please see license.txt
 
 import frappe
+from frappe import _
 from frappe.model.document import Document
 
 
@@ -18,3 +19,9 @@ class GPPinnedProject(Document):
 		Pin = frappe.qb.DocType("GP Pinned Project")
 		query = query.where(Pin.user == frappe.session.user)
 		return query
+
+	def validate(self):
+		if frappe.db.exists(
+			"GP Pinned Project", {"project": self.project, "user": frappe.session.user}
+		):
+			frappe.throw(_("This project is already pinned"))

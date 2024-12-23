@@ -14,7 +14,7 @@
             {{ activeStep.title }}
           </h2>
           <span class="text-sm text-ink-gray-5">
-            Step {{ activeStepIndex + 1 }} of {{ steps.length }}
+            {{ __('Step {0} of {1}', [activeStepIndex + 1, steps.length]) }}
           </span>
         </div>
         <div class="mt-3.5 flex w-full gap-2">

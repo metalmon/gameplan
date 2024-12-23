@@ -3,6 +3,7 @@
 
 
 import frappe
+from frappe import _
 
 
 class HasReactions:
@@ -18,15 +19,15 @@ class HasReactions:
 			case 0:
 				message = ""
 			case 1:
-				message = "1 person reacted to your post"
+				message = _("1 person reacted to your post")
 			case _:
-				message = f"{len(people)} people reacted to your post"
+				message = _("{0} people reacted to your post").format(len(people))
 		values = frappe._dict(
 			to_user=self.owner,
 			type="Reaction",
 		)
 		if self.doctype == "GP Discussion":
-			values.discussion = self.name
+				values.discussion = self.name
 		elif self.doctype == "GP Comment":
 			values.comment = self.name
 

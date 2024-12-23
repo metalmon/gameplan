@@ -2,6 +2,7 @@
 # For license information, please see license.txt
 
 import frappe
+from frappe import _
 from frappe.model.document import Document
 
 from gameplan.gameplan.doctype.gp_notification.gp_notification import GPNotification
@@ -16,11 +17,11 @@ class GPDiscussion(HasActivity, HasMentions, HasReactions, Document):
 	on_delete_cascade = ["GP Comment", "GP Discussion Visit", "GP Activity", "GP Poll"]
 	on_delete_set_null = ["GP Notification"]
 	activities = [
-		"Discussion Closed",
-		"Discussion Reopened",
-		"Discussion Title Changed",
-		"Discussion Pinned",
-		"Discussion Unpinned",
+		_("Discussion Closed"),
+		_("Discussion Reopened"),
+		_("Discussion Title Changed"),
+		_("Discussion Pinned"),
+		_("Discussion Unpinned"),
 	]
 	mentions_field = "content"
 
@@ -88,7 +89,7 @@ class GPDiscussion(HasActivity, HasMentions, HasReactions, Document):
 	def log_title_update(self):
 		if self.has_value_changed("title") and self.get_doc_before_save():
 			self.log_activity(
-				"Discussion Title Changed",
+				_("Discussion Title Changed"),
 				data={"old_title": self.get_doc_before_save().title, "new_title": self.title},
 			)
 
@@ -142,7 +143,7 @@ class GPDiscussion(HasActivity, HasMentions, HasReactions, Document):
 			return
 		self.closed_at = frappe.utils.now()
 		self.closed_by = frappe.session.user
-		self.log_activity("Discussion Closed")
+		self.log_activity(_("Discussion Closed"))
 		self.save()
 
 	@frappe.whitelist()
@@ -151,7 +152,7 @@ class GPDiscussion(HasActivity, HasMentions, HasReactions, Document):
 			return
 		self.closed_at = None
 		self.closed_by = None
-		self.log_activity("Discussion Reopened")
+		self.log_activity(_("Discussion Reopened"))
 		self.save()
 
 	@frappe.whitelist()
@@ -160,7 +161,7 @@ class GPDiscussion(HasActivity, HasMentions, HasReactions, Document):
 			return
 		self.pinned_at = frappe.utils.now()
 		self.pinned_by = frappe.session.user
-		self.log_activity("Discussion Pinned")
+		self.log_activity(_("Discussion Pinned"))
 		self.save()
 
 	@frappe.whitelist()
@@ -169,7 +170,7 @@ class GPDiscussion(HasActivity, HasMentions, HasReactions, Document):
 			return
 		self.pinned_at = None
 		self.pinned_by = None
-		self.log_activity("Discussion Unpinned")
+		self.log_activity(_("Discussion Unpinned"))
 		self.save()
 
 	@frappe.whitelist()

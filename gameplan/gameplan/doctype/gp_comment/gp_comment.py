@@ -2,6 +2,7 @@
 # For license information, please see license.txt
 
 import frappe
+from frappe import _
 from frappe.model.document import Document
 
 from gameplan.mixins.mentions import HasMentions
@@ -21,7 +22,7 @@ class GPComment(HasMentions, HasReactions, Document):
 		reference_doc = frappe.get_doc(self.reference_doctype, self.reference_name)
 		if reference_doc.meta.has_field("closed_at"):
 			if reference_doc.closed_at:
-				frappe.throw("Cannot add comment to a closed discussion")
+				frappe.throw(_("Cannot add comment to a closed discussion"))
 
 	def after_insert(self):
 		if self.reference_doctype not in ["GP Discussion", "GP Task"]:

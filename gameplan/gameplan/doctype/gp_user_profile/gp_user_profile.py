@@ -4,6 +4,7 @@
 from time import sleep
 
 import frappe
+from frappe import _
 from frappe.model.document import Document
 from frappe.model.naming import append_number_if_name_exists
 from frappe.query_builder.functions import Count
@@ -34,7 +35,7 @@ class GPUserProfile(Document):
 	@frappe.whitelist()
 	def remove_image_background(self, default_color=None):
 		if not self.image:
-			frappe.throw("Profile image not found")
+			frappe.throw(_("Profile image not found"))
 
 		job_id = f"remove-img-bg-{self.name}"
 		job = frappe.enqueue(

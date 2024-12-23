@@ -2,6 +2,7 @@
 # For license information, please see license.txt
 
 import frappe
+from frappe import _
 
 
 class ManageMembersMixin:
@@ -35,14 +36,14 @@ class ManageMembersMixin:
 
 	def invite_via_email(self, member):
 		invite_link = frappe.utils.get_url(f"/api/method/gameplan.api.accept_invitation?key={member.key}")
-		title = f"Team: {self.title}" if self.doctype == "GP Team" else f"Project: {self.title}"
+		title = _("Team: {0}").format(self.title) if self.doctype == "GP Team" else _("Project: {0}").format(self.title)
 		if frappe.local.dev_server:
 			print(f"Invite link for {member.email}: {invite_link}")
 
 		frappe.sendmail(
 			recipients=member.email,
-			subject=f"You have been invited to join {self.title}",
-			template="team_invitation",
+			subject=_("You have been invited to join {0}").format(self.title),
+			template="gameplan_invitation",
 			args={"title": title, "invite_link": invite_link},
 			now=True,
 		)

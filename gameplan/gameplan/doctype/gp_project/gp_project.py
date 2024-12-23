@@ -4,6 +4,7 @@
 from urllib.parse import urljoin
 
 import frappe
+from frappe import _
 import requests
 from bs4 import BeautifulSoup
 from frappe.model.document import Document
@@ -75,9 +76,10 @@ class GPProject(ManageMembersMixin, Archivable, Document):
 			self.icon = get_random_gemoji().emoji
 
 		if not self.readme:
-			self.readme = f"""<h3>Welcome to the {self.title} page!</h3>
-			<p>You can add a brief introduction about this project, links,
-			resources, and other important information here.</p>
+			welcome_text = _("Welcome to the {0}!").format(self.title)
+			intro_text = _("You can add a brief introduction about this project, links, resources, and other important information here.")
+			self.readme = f"""<h3>{welcome_text}</h3>
+			<p>{intro_text}</p>
 			"""
 
 		self.append(
@@ -108,7 +110,7 @@ class GPProject(ManageMembersMixin, Archivable, Document):
 	def delete_group(self, group):
 		tasks = frappe.db.count("GP Task", {"project": self.name, "status": group})
 		if tasks > 0:
-			frappe.throw(f"Group {group} cannot be deleted because it has {tasks} tasks")
+			frappe.throw(_("Group {0} cannot be deleted because it has {1} tasks").format(group, tasks))
 
 		for state in self.task_states:
 			if state.status == group:
@@ -165,7 +167,7 @@ class GPProject(ManageMembersMixin, Archivable, Document):
 		if isinstance(project, str):
 			project = int(project)
 		if not frappe.db.exists("GP Project", project):
-			frappe.throw(f'Invalid Project "{project}"')
+			frappe.throw(_('Invalid Project "{0}"').format(project))
 		return self.rename(project, merge=True, validate_rename=False, force=True)
 
 	@frappe.whitelist()

@@ -5,6 +5,7 @@
 import frappe
 from frappe.translate import get_all_translations
 from frappe.utils import cstr, split_emails, validate_email_address
+from frappe import _
 
 import gameplan
 from gameplan.utils.utils import validate_type
@@ -27,7 +28,7 @@ def get_translations():
 @frappe.whitelist(allow_guest=True)
 def get_user_info(user=None):
     if frappe.session.user == "Guest":
-        frappe.throw("Authentication failed", exc=frappe.AuthenticationError)
+        frappe.throw(_("Authentication failed"), exc=frappe.AuthenticationError)
 
     filters = {"roles.role": ["like", "Gameplan %"]}
     if user:
@@ -77,7 +78,7 @@ def get_user_info(user=None):
 @validate_type
 def change_user_role(user: str, role: str):
     if gameplan.is_guest():
-        frappe.throw("Only Admin can change user roles")
+        frappe.throw(_("Only Admin can change user roles"))
 
     if role not in ["Gameplan Guest", "Gameplan Member", "Gameplan Admin"]:
         return get_user_info(user)[0]
@@ -152,11 +153,11 @@ def unread_notifications():
 @validate_type
 def accept_invitation(key: str = None):
     if not key:
-        frappe.throw("Invalid or expired key")
+        frappe.throw(_("Invalid or expired key"))
 
     result = frappe.db.get_all("GP Invitation", filters={"key": key}, pluck="name")
     if not result:
-        frappe.throw("Invalid or expired key")
+        frappe.throw(_("Invalid or expired key"))
 
     invitation = frappe.get_doc("GP Invitation", result[0])
 

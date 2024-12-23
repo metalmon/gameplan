@@ -3,6 +3,7 @@
 
 
 import frappe
+from frappe import _
 
 base_url = "https://api.unsplash.com"
 
@@ -25,7 +26,7 @@ def get_random(params=None):
 
 def make_unsplash_request(path):
 	if "unsplash_access_key" not in frappe.conf:
-		frappe.throw("Please set unsplash_access_key in site_config.json")
+		frappe.throw(_("Please set unsplash_access_key in site_config.json"))
 
 	import requests
 

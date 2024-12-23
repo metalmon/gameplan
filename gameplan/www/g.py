@@ -3,6 +3,7 @@
 
 
 import frappe
+from frappe import _
 from frappe.utils.telemetry import capture
 
 no_cache = 1
@@ -22,7 +23,7 @@ def get_context():
 @frappe.whitelist(methods=["POST"], allow_guest=True)
 def get_context_for_dev():
 	if not frappe.conf.developer_mode:
-		frappe.throw("This method is only meant for developer mode")
+		frappe.throw(_("This method is only meant for developer mode"))
 	return get_boot()
 
 

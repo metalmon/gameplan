@@ -4,6 +4,7 @@
 
 import frappe
 from pypika.terms import ExistsCriterion
+from frappe import _
 
 import gameplan
 
@@ -117,3 +118,7 @@ def get_discussions(filters=None, order_by=None, limit_start=None, limit_page_le
 	for discussion in discussions:
 		discussion["ongoing_polls"] = [p for p in ongoing_polls if str(p.discussion) == str(discussion.name)]
 	return discussions
+
+def check_permission(doc):
+	if not frappe.has_permission(doc.doctype, doc=doc):
+		frappe.throw(_("Insufficient Permission for GP Discussion"), frappe.PermissionError)

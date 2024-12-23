@@ -2,6 +2,7 @@
 # For license information, please see license.txt
 
 import frappe
+from frappe import _
 from frappe.model.document import Document
 from frappe.model.naming import append_number_if_name_exists
 from pypika.terms import ExistsCriterion
@@ -18,7 +19,7 @@ class GPTeam(Archivable, Document):
 	def as_dict(self, *args, **kwargs) -> dict:
 		members = [m.user for m in self.members]
 		if self.is_private and frappe.session.user not in members:
-			frappe.throw("Not permitted", frappe.PermissionError)
+			frappe.throw(_("Not permitted"), frappe.PermissionError)
 
 		d = super().as_dict(*args, **kwargs)
 		return d
@@ -54,9 +55,10 @@ class GPTeam(Archivable, Document):
 			self.icon = get_random_gemoji().emoji
 
 		if not self.readme:
-			self.readme = f"""<h3>Welcome to the {self.title} team page!</h3>
-			<p>You can add a brief introduction about the team, important links, resources,
-			and other important information here.</p>
+			welcome_text = _("Welcome to the {0}!").format(self.title)
+			intro_text = _("You can add a brief introduction about the team, important links, resources, and other important information here.")
+			self.readme = f"""<h3>{welcome_text}</h3>
+			<p>{intro_text}</p>
 			"""
 
 		self.add_member(frappe.session.user)

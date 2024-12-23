@@ -2,6 +2,7 @@
 # For license information, please see license.txt
 
 import frappe
+from frappe import _
 from frappe.model.document import Document
 
 
@@ -9,7 +10,7 @@ class GPInvitation(Document):
 	def before_insert(self):
 		frappe.utils.validate_email_address(self.email, True)
 		if self.role == "Gameplan Guest" and not (self.teams or self.projects):
-			frappe.throw("Project is required to invite as Guest")
+			frappe.throw(_("Project is required to invite as Guest"))
 
 		if self.role != "Gameplan Guest":
 			self.teams = None
@@ -32,7 +33,7 @@ class GPInvitation(Document):
 
 		frappe.sendmail(
 			recipients=self.email,
-			subject=f"You have been invited to join {title}",
+			subject=_("You have been invited to join {0}").format(title),
 			template=template,
 			args={"title": title, "invite_link": invite_link},
 			now=True,
@@ -46,7 +47,7 @@ class GPInvitation(Document):
 
 	def accept(self):
 		if self.status == "Expired":
-			frappe.throw("Invalid or expired key")
+			frappe.throw(_("Invalid or expired key"))
 
 		user = self.create_user_if_not_exists()
 		user.append_roles(self.role)
