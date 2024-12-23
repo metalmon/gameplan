@@ -7,7 +7,7 @@ from frappe.model.rename_doc import rename_doc
 
 
 def execute():
-    if frappe.db.exists("DocType", "Team Project Discussion") and not frappe.db.exists(
-        "DocType", "Team Discussion"
-    ):
-        rename_doc("DocType", "Team Project Discussion", "Team Discussion")
+	if frappe.db.exists("DocType", "Team Project Discussion") and not frappe.db.exists(
+		"DocType", "Team Discussion"
+	):
+		rename_doc("DocType", "Team Project Discussion", "Team Discussion")

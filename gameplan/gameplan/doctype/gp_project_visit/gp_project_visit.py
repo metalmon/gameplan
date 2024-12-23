@@ -6,8 +6,8 @@ from frappe.model.document import Document
 
 
 class GPProjectVisit(Document):
-    @staticmethod
-    def get_list_query(query):
-        ProjectVisit = frappe.qb.DocType("GP Project Visit")
-        query = query.where(ProjectVisit.user == frappe.session.user)
-        return query
+	@staticmethod
+	def get_list_query(query):
+		ProjectVisit = frappe.qb.DocType("GP Project Visit")
+		query = query.where(ProjectVisit.user == frappe.session.user)
+		return query

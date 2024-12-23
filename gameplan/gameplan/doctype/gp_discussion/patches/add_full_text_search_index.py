@@ -6,4 +6,4 @@ from ..gp_discussion import make_full_text_search_index
 
 
 def execute():
-    make_full_text_search_index()
+	make_full_text_search_index()
