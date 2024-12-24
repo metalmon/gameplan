@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gameplan VERSION\n"
 "Report-Msgid-Bugs-To: faris@frappe.io\n"
-"POT-Creation-Date: 2024-12-24 01:13+0000\n"
-"PO-Revision-Date: 2024-12-24 01:13+0000\n"
+"POT-Creation-Date: 2024-12-24 13:37+0000\n"
+"PO-Revision-Date: 2024-12-24 13:37+0000\n"
 "Last-Translator: faris@frappe.io\n"
 "Language-Team: faris@frappe.io\n"
 "MIME-Version: 1.0\n"
@@ -1254,7 +1254,7 @@ msgid "Multiple Answers"
 msgstr ""
 
 #: frontend/src/components/AppSidebar.vue:205 frontend/src/pages/MyPages.vue:5
-#: frontend/src/pages/MyPages.vue:84 frontend/src/pages/Page.vue:123
+#: frontend/src/pages/MyPages.vue:84 frontend/src/pages/Page.vue:126
 msgid "My Pages"
 msgstr ""
 
@@ -1398,7 +1398,7 @@ msgstr ""
 msgid "Page Title"
 msgstr ""
 
-#: frontend/src/pages/Page.vue:154 frontend/src/pages/Project.vue:460
+#: frontend/src/pages/Page.vue:157 frontend/src/pages/Project.vue:460
 #: frontend/src/pages/ProjectOverview.vue:45
 #: frontend/src/pages/ProjectPages.vue:5
 msgid "Pages"
@@ -2124,7 +2124,7 @@ msgid "Updated"
 msgstr ""
 
 #: frontend/src/components/PageList.vue:26
-msgid "Updated {time}"
+msgid "Updated {0}"
 msgstr ""
 
 #: frontend/src/components/ProfileImageEditor.vue:19
@@ -2228,7 +2228,7 @@ msgid "When a discussion is closed, commenting is disabled. Anyone can re-open t
 msgstr ""
 
 #: frontend/src/components/DiscussionView.vue:345
-msgid "When a discussion is pinned, it shows up on top of the discussion list in ${project.title}. Do you want to pin this discussion?"
+msgid "When a discussion is pinned, it shows up on top of the discussion list in {0}. Do you want to pin this discussion?"
 msgstr ""
 
 #: frontend/src/pages/Onboarding.vue:108

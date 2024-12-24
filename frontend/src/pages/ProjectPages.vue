@@ -20,7 +20,7 @@
               onClick: () => (orderBy = 'creation desc'),
             },
           ]"
-          placement="center"
+          placement="right"
         >
           <Button>
             <div class="flex items-center">
@@ -67,7 +67,12 @@ export default {
         onSuccess(doc) {
           this.$router.push({
             name: 'ProjectPage',
-            params: { pageId: doc.name },
+            params: { 
+              pageId: doc.name,
+              teamId: this.project.team,
+              projectId: this.project.name,
+              slug: doc.slug
+            },
           })
         },
       }

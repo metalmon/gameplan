@@ -30,7 +30,10 @@ export default {
           unfollow: 'unfollow',
         },
         onSuccess() {
-          this.$resources.project.trackVisit.submit()
+          if (!this._trackVisitSubmitted) {
+            this._trackVisitSubmitted = true
+            this.$resources.project.trackVisit.submit()
+          }
         },
       }
     },

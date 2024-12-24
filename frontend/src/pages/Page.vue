@@ -101,6 +101,9 @@ export default {
           name: this.page.doc.project ? 'ProjectPage' : 'Page',
           params: {
             ...this.$route.params,
+            teamId: this.page.doc.team,
+            projectId: this.page.doc.project,
+            pageId: this.page.doc.name,
             slug: this.page.doc.slug,
           },
           query: this.$route.query,

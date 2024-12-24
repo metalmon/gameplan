@@ -74,20 +74,3 @@ def batch(requests):
 		responses.append(response)
 
 	return responses
-
-
-@frappe.whitelist()
-def get(doctype, name=None, filters=None, parent=None):
-	"""Returns a document by name or filters
-
-	:param doctype: DocType of the document to be returned
-	:param name: return document of this `name`
-	:param filters: If name is not set, filter by these values and return the first match"""
-	check_permissions(doctype, parent)
-	
-	if name:
-		doc = frappe.get_doc(doctype, name)
-	else:
-		doc = frappe.get_doc(doctype, filters)
-	
-	return doc.as_dict()

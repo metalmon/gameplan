@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gameplan VERSION\n"
 "Report-Msgid-Bugs-To: faris@frappe.io\n"
-"POT-Creation-Date: 2024-12-24 01:13+0000\n"
-"PO-Revision-Date: 2024-12-24 05:17+0400\n"
+"POT-Creation-Date: 2024-12-24 13:37+0000\n"
+"PO-Revision-Date: 2024-12-24 17:41+0400\n"
 "Last-Translator: AlexKuzin <dev@olimpicfresh.ru>\n"
 "Language-Team: faris@frappe.io\n"
 "Language: ru\n"
@@ -1257,7 +1257,7 @@ msgid "Multiple Answers"
 msgstr "Несколько ответов"
 
 #: frontend/src/components/AppSidebar.vue:205 frontend/src/pages/MyPages.vue:5
-#: frontend/src/pages/MyPages.vue:84 frontend/src/pages/Page.vue:123
+#: frontend/src/pages/MyPages.vue:84 frontend/src/pages/Page.vue:126
 msgid "My Pages"
 msgstr "Мои страницы"
 
@@ -1401,7 +1401,7 @@ msgstr "Параметры страницы"
 msgid "Page Title"
 msgstr "Заголовок страницы"
 
-#: frontend/src/pages/Page.vue:154 frontend/src/pages/Project.vue:460
+#: frontend/src/pages/Page.vue:157 frontend/src/pages/Project.vue:460
 #: frontend/src/pages/ProjectOverview.vue:45
 #: frontend/src/pages/ProjectPages.vue:5
 msgid "Pages"
@@ -2127,8 +2127,8 @@ msgid "Updated"
 msgstr "Обновлено"
 
 #: frontend/src/components/PageList.vue:26
-msgid "Updated {time}"
-msgstr "Обновлено {time}"
+msgid "Updated {0}"
+msgstr "Обновлено {0}"
 
 #: frontend/src/components/ProfileImageEditor.vue:19
 #: frontend/src/components/UnsplashImageBrowser.vue:24
@@ -2231,8 +2231,8 @@ msgid "When a discussion is closed, commenting is disabled. Anyone can re-open t
 msgstr "Когда обсуждение закрыто, комментирование отключается. Любой желающий может возобновить обсуждение позже. Вы хотите закрыть это обсуждение?"
 
 #: frontend/src/components/DiscussionView.vue:345
-msgid "When a discussion is pinned, it shows up on top of the discussion list in ${project.title}. Do you want to pin this discussion?"
-msgstr "Когда обсуждение прикреплено, оно появляется в верхней части списка обсуждений в ${project.title}. Вы хотите закрепить это обсуждение?"
+msgid "When a discussion is pinned, it shows up on top of the discussion list in {0}. Do you want to pin this discussion?"
+msgstr "Когда обсуждение закреплено, оно отображается в верхней части списка обсуждений в {0}. Хотите закрепить эту дискуссию?"
 
 #: frontend/src/pages/Onboarding.vue:108
 msgid "Which project are you working on?"

@@ -39,7 +39,7 @@
         <div :class="{ 'pb-4 mt-1': !editingPost }">
           <div class="flex items-start justify-between space-x-1">
             <h1 v-if="!editingPost" class="flex items-center text-2xl font-semibold">
-              <Tooltip v-if="discussion.closed_at" text="{{ __('This discussion is closed') }}">
+              <Tooltip v-if="discussion.closed_at" :text="__('This discussion is closed')">
                 <LucideLock class="mr-2 h-4 w-4 text-ink-gray-7" :stroke-width="2" />
               </Tooltip>
               <span class="text-ink-gray-9">
@@ -72,7 +72,7 @@
                 class="w-full rounded border-0 text-ink-gray-9 px-0 py-0.5 text-2xl font-semibold focus:ring-0"
                 ref="title"
                 v-model="discussion.title"
-                placeholder="{{ __('Title') }}"
+                :placeholder="__('Title')"
                 v-focus
               />
             </div>
@@ -342,7 +342,7 @@ export default {
             let project = this.$getDoc('GP Project', this.discussion.project)
             this.$dialog({
               title: __('Pin discussion'),
-              message: `{{ __('When a discussion is pinned, it shows up on top of the discussion list in ${project.title}. Do you want to pin this discussion?') }}`,
+              message: __("When a discussion is pinned, it shows up on top of the discussion list in {0}. Do you want to pin this discussion?", [project.title]),
               icon: { name: 'arrow-up-left' },
               actions: [
                 {
@@ -441,7 +441,7 @@ export default {
           label: __('Delete'),
           icon: 'trash',
           onClick: () => {
-            $dialog({
+            this.$dialog({
               title: __('Delete'),
               message: __('Are you sure you want to delete this post? This is irreversible!'),
               actions: [

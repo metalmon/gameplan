@@ -88,7 +88,7 @@
                 {{ discussionTimestamp(d) }}
               </div>
               <div class="mt-1.5 flex items-center justify-end space-x-3">
-                <Tooltip text="{{ __('Ongoing poll') }}" v-if="d.ongoing_polls?.length">
+                <Tooltip :text="__('Ongoing poll')" v-if="d.ongoing_polls?.length">
                   <LucideBarChart2 class="h-4 w-4 -rotate-90" />
                 </Tooltip>
                 <Badge>{{ d.comments_count + 1 }}</Badge>
@@ -180,8 +180,8 @@ export default {
     },
     discussionTimestampDescription(d) {
       return [
-        `{{ __('First Post:') }} ${this.$dayjs(d.creation)}`,
-        `{{ __('Latest Post:') }} ${this.$dayjs(d.last_post_at)}`,
+        `${__('First Post:')} ${this.$dayjs(d.creation)}`,
+        `${__('Latest Post:')} ${this.$dayjs(d.last_post_at)}`,
       ].join('\n')
     },
   },
