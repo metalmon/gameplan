@@ -81,13 +81,13 @@
                       label: __('Delete'),
                       variant: 'solid',
                       theme: 'red',
-                      onClick: (close) => {
+                      onClick: (context) => {
                         return comments.setValue
                           .submit({
                             name: comment.name,
                             deleted_at: $dayjs().format('YYYY-MM-DD HH:mm:ss'),
                           })
-                          .then(close)
+                          .then(context.close)
                       },
                     },
                   ],

@@ -38,16 +38,33 @@ function translate(message, replace, context = null) {
 }
 
 function fetchTranslations() {
-  createResource({
-    url: 'gameplan.api.get_translations',
-    cache: 'translations',
-    auto: true,
-    onSuccess: (data) => {
-      window.translatedMessages = data.translations || {}
-      setDayjsLocale(data.language)
-    },
-    onError: () => {
-      window.translatedMessages = {}
-    }
-  })
+  const maxRetries = 3
+  const baseDelay = 1000 // 1 second
+  let retryCount = 0
+
+  function attemptFetch() {
+    createResource({
+      url: 'gameplan.api.get_translations',
+      cache: 'translations',
+      auto: true,
+      onSuccess: (data) => {
+        window.translatedMessages = data.translations || {}
+        setDayjsLocale(data.language)
+      },
+      onError: (error) => {
+        retryCount++
+        if (retryCount < maxRetries) {
+          // Exponential backoff: 1s, 2s, 4s
+          const delay = baseDelay * Math.pow(2, retryCount - 1)
+          console.warn(`Failed to fetch translations (attempt ${retryCount}/${maxRetries}). Retrying in ${delay/1000}s...`, error)
+          setTimeout(attemptFetch, delay)
+        } else {
+          console.error('Failed to fetch translations after all retries. Using empty translations.', error)
+          window.translatedMessages = {}
+        }
+      }
+    })
+  }
+
+  attemptFetch()
 }

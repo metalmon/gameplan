@@ -2,7 +2,7 @@
   <div class="space-y-4">
     <FormControl
       type="text"
-      label="Question"
+      :label="__('Question')"
       v-model="poll.title"
       @change="$emit('update:poll', poll)"
       autocomplete="off"

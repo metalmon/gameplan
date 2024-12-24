@@ -73,7 +73,7 @@
                 :label="{{ __('Add a poll') }}"
                 @click="
                   () => {
-                    newCommentType = 'Poll'
+                    newCommentType = 'poll'
                     showCommentBox = true
                   }
                 "
@@ -99,7 +99,7 @@
           </div>
           <CommentEditor
             ref="newCommentEditor"
-            v-show="newCommentType == 'Comment'"
+            v-show="newCommentType == 'comment'"
             :value="newComment"
             @change="onNewCommentChange"
             :submitButtonProps="{
@@ -112,10 +112,10 @@
               onClick: discardComment,
             }"
             :editable="showCommentBox"
-            :placeholder="{{ __('Add a comment') }}"
+            :placeholder="__('Add a comment')"
           />
           <PollEditor
-            v-show="newCommentType == 'Poll'"
+            v-show="newCommentType == 'poll'"
             v-model:poll="newPoll"
             :submitButtonProps="{
               onClick: submitPoll,
@@ -142,6 +142,11 @@ import Poll from './Poll.vue'
 import { getScrollContainer } from '@/utils/scrollContainer'
 import { Tooltip } from 'frappe-ui'
 
+const COMMENT_TYPES = {
+  COMMENT: 'comment',
+  POLL: 'poll',
+}
+
 export default {
   name: 'CommentsArea',
   props: ['doctype', 'name', 'newCommentsFrom', 'readOnlyMode', 'disableNewComment'],
@@ -159,7 +164,7 @@ export default {
     return {
       commentMap: {},
       showCommentBox: false,
-      newCommentType: 'Comment',
+      newCommentType: 'comment',
       newComment: draftComment || '',
       newPoll: {
         title: '',
