@@ -19,7 +19,11 @@ def get_translations():
         else:
             language = frappe.db.get_single_value("System Settings", "language")
 
-        return get_all_translations(language)
+        translations = get_all_translations(language)
+        return {
+            "language": language,
+            "translations": translations
+        }
     except Exception as e:
         frappe.log_error("Translation Error", str(e))
         return {}

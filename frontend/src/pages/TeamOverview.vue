@@ -15,7 +15,10 @@
         </h2>
         <div class="flex items-stretch space-x-2">
           <TabButtons
-            :buttons="[{ label: __('Active') }, { label: __('Archived') }]"
+            :buttons="[
+              { label: __('Active'), value: 'active' },
+              { label: __('Archived'), value: 'archived' }
+            ]"
             v-model="activeTab"
           />
           <Button
@@ -73,7 +76,7 @@
                   class="text-ink-gray-7"
                   v-if="project.tasks_count + project.discussions_count == 0"
                 >
-                  {{ $dayjs(project.creation).fromNow() }}
+                  {{ $dayjs(project.modified).fromNow() }}
                 </span>
               </p>
             </div>
@@ -145,7 +148,7 @@ export default {
     return {
       createNewProjectDialog: false,
       newProject: { title: '', is_private: 0 },
-      activeTab: 'Active',
+      activeTab: 'active',
     }
   },
   computed: {
@@ -153,7 +156,7 @@ export default {
       return projects
     },
     projectsList() {
-      return this.activeTab === 'Active' ? this.activeProjects : this.archivedProjects
+      return this.activeTab === 'active' ? this.activeProjects : this.archivedProjects
     },
     activeProjects() {
       return this.teamProjects.filter((project) => !project.archived_at)

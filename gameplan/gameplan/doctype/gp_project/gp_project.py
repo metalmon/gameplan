@@ -152,7 +152,7 @@ class GPProject(ManageMembersMixin, Archivable, Document):
 	def move_to_team(self, team):
 		if not team or self.team == team:
 			return
-		self.team = team
+		self.team = str(team)
 		self.save()
 		for doctype in ["GP Task", "GP Discussion"]:
 			for name in frappe.db.get_all(doctype, {"project": self.name}, pluck="name"):
@@ -164,11 +164,47 @@ class GPProject(ManageMembersMixin, Archivable, Document):
 	def merge_with_project(self, project=None):
 		if not project or self.name == project:
 			return
-		if isinstance(project, str):
-			project = int(project)
+		project = str(project)
 		if not frappe.db.exists("GP Project", project):
 			frappe.throw(_('Invalid Project "{0}"').format(project))
-		return self.rename(project, merge=True, validate_rename=False, force=True)
+		
+		# Получаем команду целевого проекта до слияния
+		target_team = frappe.db.get_value('GP Project', project, 'team')
+		old_name = self.name
+		old_team = self.team
+		
+		# Выполняем слияние
+		result = self.rename(project, merge=True, validate_rename=False, force=True)
+		
+		# Получаем обновленный документ
+		merged_project = frappe.get_doc('GP Project', project)
+		
+		# Обновляем команду для всех связанных записей
+		for doctype in ["GP Task", "GP Discussion"]:
+			frappe.db.sql("""
+				UPDATE `tab{doctype}`
+				SET team = %s
+				WHERE project = %s
+			""".format(doctype=doctype), (target_team, project))
+		
+		# Обновляем команду в проекте, если она изменилась
+		if merged_project.team != target_team:
+			merged_project.team = target_team
+			merged_project.save()
+		
+		# Уведомляем фронтенд об удалении старого проекта
+		frappe.publish_realtime('project_deleted', {
+			'project': old_name,
+			'merged_with': project,
+			'team': target_team,
+			'old_team': old_team
+		})
+		
+		return {
+			'project': project,
+			'team': target_team,
+			'old_team': old_team
+		}
 
 	@frappe.whitelist()
 	def invite_guest(self, email):
@@ -188,9 +224,7 @@ class GPProject(ManageMembersMixin, Archivable, Document):
 		values = {"user": frappe.session.user, "project": self.name}
 		existing = frappe.db.get_value("GP Project Visit", values)
 		if existing:
-			visit = frappe.get_doc("GP Project Visit", existing)
-			visit.last_visit = frappe.utils.now()
-			visit.save(ignore_permissions=True)
+			frappe.db.set_value("GP Project Visit", existing, "last_visit", frappe.utils.now())
 		else:
 			visit = frappe.get_doc(doctype="GP Project Visit")
 			visit.update(values)

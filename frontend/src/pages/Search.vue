@@ -25,7 +25,7 @@
       v-if="$resources.search.params && $resources.search.data"
       class="mt-4 text-base font-semibold text-ink-gray-8"
     >
-      About {{ $resources.search.data.total }} results for "{{ $resources.search.params?.query }}"
+      {{ __('About {0} results for "{1}"', [$resources.search.data.total, $resources.search.params?.query]) }}
       ({{ $resources.search.data.duration.toFixed(2) }}
       ms)
     </div>

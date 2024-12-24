@@ -1,5 +1,5 @@
 import { computed } from 'vue'
-import { createListResource } from 'frappe-ui'
+import { createListResource, createResource } from 'frappe-ui'
 
 export let projects = createListResource({
   doctype: 'GP Project',
@@ -30,6 +30,35 @@ export let projects = createListResource({
     })
   },
   auto: true,
+  realtime: true,
+  onSocketMessage(data) {
+    if (data.message && data.message.project_deleted) {
+      const { project, merged_with, team, old_team } = data.message
+      if (this.data) {
+        const index = this.data.findIndex(p => p.name === project)
+        if (index !== -1) {
+          this.data.splice(index, 1)
+        }
+      }
+      // Проверяем оба возможных пути - и со старой, и с новой командой
+      const currentPath = window.location.pathname
+      if (currentPath.includes(`/g/${old_team}/projects/${project}`) || 
+          currentPath.includes(`/projects/${project}`)) {
+        window.location.href = `/g/${team}/projects/${merged_with}`
+      }
+    }
+  }
+})
+
+// Создаем ресурс для получения одного проекта
+export let project = createResource({
+  url: 'gameplan.extends.client.get',
+  params: {
+    doctype: 'GP Project'
+  },
+  transform(data) {
+    return data
+  }
 })
 
 export function getTeamProjects(team) {
@@ -50,5 +79,5 @@ export function getTeamArchivedProjects(team) {
 
 export let getProject = (projectId) => {
   if (projectId == null) return null
-  return projects.data.find((project) => project.name.toString() === projectId.toString())
+  return project.submit({ name: projectId })
 }

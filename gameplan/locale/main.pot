@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gameplan VERSION\n"
 "Report-Msgid-Bugs-To: faris@frappe.io\n"
-"POT-Creation-Date: 2024-12-23 17:45+0000\n"
-"PO-Revision-Date: 2024-12-23 17:45+0000\n"
+"POT-Creation-Date: 2024-12-24 00:24+0000\n"
+"PO-Revision-Date: 2024-12-24 00:24+0000\n"
 "Last-Translator: faris@frappe.io\n"
 "Language-Team: faris@frappe.io\n"
 "MIME-Version: 1.0\n"
@@ -35,6 +35,10 @@ msgstr ""
 msgid "About"
 msgstr ""
 
+#: frontend/src/pages/Search.vue:28
+msgid "About {0} results for \"{1}\""
+msgstr ""
+
 #: gameplan/gameplan/doctype/gp_invitation/gp_invitation.js:7
 #: gameplan/templates/emails/gameplan_invitation.html:3
 msgid "Accept Invitation"
@@ -55,16 +59,20 @@ msgstr ""
 msgid "Action"
 msgstr ""
 
-#: frontend/src/pages/TeamOverview.vue:18
+#: frontend/src/pages/TeamOverview.vue:19
 msgid "Active"
+msgstr ""
+
+#: frontend/src/components/AddMemberDialog.vue:68
+msgid "Add"
 msgstr ""
 
 #: frontend/src/components/TeamMembers.vue:6
 msgid "Add Members"
 msgstr ""
 
-#: frontend/src/pages/TeamOverview.vue:29
-#: frontend/src/pages/TeamOverview.vue:94
+#: frontend/src/pages/TeamOverview.vue:32
+#: frontend/src/pages/TeamOverview.vue:97
 msgid "Add Project"
 msgstr ""
 
@@ -93,6 +101,14 @@ msgstr ""
 
 #: frontend/src/pages/OnboardingStepInvites.vue:27
 msgid "Add another email"
+msgstr ""
+
+#: frontend/src/components/AddMemberDialog.vue:27
+msgid "Add member by name"
+msgstr ""
+
+#: frontend/src/components/AddMemberDialog.vue:2
+msgid "Add members"
 msgstr ""
 
 #: frontend/src/pages/Discussions.vue:8 frontend/src/pages/MyPages.vue:34
@@ -133,8 +149,9 @@ msgstr ""
 msgid "Anonymous poll"
 msgstr ""
 
-#: frontend/src/components/Settings/SettingsDialog.vue:57
-#: frontend/src/pages/Team.vue:43 frontend/src/pages/Team.vue:105
+#: frontend/src/components/Settings/SettingsDialog.vue:59
+#: frontend/src/pages/Project.vue:496 frontend/src/pages/Team.vue:43
+#: frontend/src/pages/Team.vue:105
 msgid "Archive"
 msgstr ""
 
@@ -150,7 +167,7 @@ msgstr ""
 msgid "Archive this project"
 msgstr ""
 
-#: frontend/src/pages/Project.vue:27 frontend/src/pages/TeamOverview.vue:18
+#: frontend/src/pages/Project.vue:27 frontend/src/pages/TeamOverview.vue:20
 msgid "Archived"
 msgstr ""
 
@@ -166,6 +183,10 @@ msgstr ""
 #: gameplan/gameplan/doctype/gp_project/gp_project.json
 #: gameplan/gameplan/doctype/gp_team/gp_team.json
 msgid "Archived By"
+msgstr ""
+
+#: frontend/src/components/Settings/ArchivedTeams.vue:3
+msgid "Archived Teams"
 msgstr ""
 
 #: frontend/src/pages/Team.vue:102
@@ -252,7 +273,7 @@ msgstr ""
 msgid "Assignee"
 msgstr ""
 
-#: gameplan/api.py:31
+#: gameplan/api.py:35
 msgid "Authentication failed"
 msgstr ""
 
@@ -437,7 +458,7 @@ msgid "Cover Image Position"
 msgstr ""
 
 #: frontend/src/components/NewTaskDialog.vue:7
-#: frontend/src/pages/TeamOverview.vue:124
+#: frontend/src/pages/TeamOverview.vue:127
 msgid "Create"
 msgstr ""
 
@@ -446,7 +467,7 @@ msgstr ""
 msgid "Create Team"
 msgstr ""
 
-#: frontend/src/pages/TeamOverview.vue:99
+#: frontend/src/pages/TeamOverview.vue:102
 msgid "Create project"
 msgstr ""
 
@@ -571,17 +592,14 @@ msgid "Discussion"
 msgstr ""
 
 #: gameplan/gameplan/doctype/gp_discussion/gp_discussion.py:20
-#: gameplan/gameplan/doctype/gp_discussion/gp_discussion.py:146
 msgid "Discussion Closed"
 msgstr ""
 
 #: gameplan/gameplan/doctype/gp_discussion/gp_discussion.py:23
-#: gameplan/gameplan/doctype/gp_discussion/gp_discussion.py:164
 msgid "Discussion Pinned"
 msgstr ""
 
 #: gameplan/gameplan/doctype/gp_discussion/gp_discussion.py:21
-#: gameplan/gameplan/doctype/gp_discussion/gp_discussion.py:155
 msgid "Discussion Reopened"
 msgstr ""
 
@@ -591,7 +609,6 @@ msgid "Discussion Title Changed"
 msgstr ""
 
 #: gameplan/gameplan/doctype/gp_discussion/gp_discussion.py:24
-#: gameplan/gameplan/doctype/gp_discussion/gp_discussion.py:173
 msgid "Discussion Unpinned"
 msgstr ""
 
@@ -969,7 +986,7 @@ msgstr ""
 msgid "Image Background Color"
 msgstr ""
 
-#: frontend/src/components/UnsplashImageBrowser.vue:42
+#: frontend/src/components/UnsplashImageBrowser.vue:41
 msgid "Image search powered by"
 msgstr ""
 
@@ -984,15 +1001,15 @@ msgstr ""
 msgid "Index"
 msgstr ""
 
-#: gameplan/gameplan/doctype/gp_discussion/api.py:124
+#: gameplan/gameplan/doctype/gp_discussion/api.py:15
 msgid "Insufficient Permission for GP Discussion"
 msgstr ""
 
-#: gameplan/gameplan/doctype/gp_project/gp_project.py:170
+#: gameplan/gameplan/doctype/gp_project/gp_project.py:169
 msgid "Invalid Project \"{0}\""
 msgstr ""
 
-#: gameplan/api.py:156 gameplan/api.py:160
+#: gameplan/api.py:160 gameplan/api.py:164
 #: gameplan/gameplan/doctype/gp_invitation/gp_invitation.py:50
 msgid "Invalid or expired key"
 msgstr ""
@@ -1027,7 +1044,7 @@ msgstr ""
 msgid "Invited By"
 msgstr ""
 
-#: frontend/src/components/Settings/SettingsDialog.vue:52
+#: frontend/src/components/Settings/SettingsDialog.vue:53
 msgid "Invites"
 msgstr ""
 
@@ -1096,7 +1113,7 @@ msgstr ""
 msgid "Last post"
 msgstr ""
 
-#: frontend/src/pages/People.vue:32
+#: frontend/src/pages/Page.vue:15 frontend/src/pages/People.vue:32
 msgid "Last updated"
 msgstr ""
 
@@ -1114,7 +1131,7 @@ msgstr ""
 msgid "Loading..."
 msgstr ""
 
-#: frontend/src/components/UserDropdown.vue:62
+#: frontend/src/components/UserDropdown.vue:68
 msgid "Log out"
 msgstr ""
 
@@ -1172,6 +1189,8 @@ msgstr ""
 
 #. Label of the members (Table) field in DocType 'GP Project'
 #. Label of the members (Table) field in DocType 'GP Team'
+#: frontend/src/components/AddMemberDialog.vue:36
+#: frontend/src/components/Settings/Members.vue:4
 #: frontend/src/components/Settings/SettingsDialog.vue:47
 #: gameplan/gameplan/doctype/gp_project/gp_project.json
 #: gameplan/gameplan/doctype/gp_team/gp_team.json
@@ -1183,8 +1202,16 @@ msgstr ""
 msgid "Mention"
 msgstr ""
 
+#: frontend/src/pages/Project.vue:262
+msgid "Merge"
+msgstr ""
+
 #: frontend/src/pages/Project.vue:83 frontend/src/pages/Project.vue:199
 msgid "Merge with another project"
+msgstr ""
+
+#: frontend/src/pages/Project.vue:261
+msgid "Merge with {0}"
 msgstr ""
 
 #. Label of the message (Text Editor) field in DocType 'GP Notification'
@@ -1307,7 +1334,7 @@ msgstr ""
 msgid "Not permitted"
 msgstr ""
 
-#: frontend/src/pages/Notifications.vue:54
+#: frontend/src/pages/Notifications.vue:57
 msgid "Nothing to see here"
 msgstr ""
 
@@ -1322,7 +1349,7 @@ msgstr ""
 msgid "Ongoing poll"
 msgstr ""
 
-#: gameplan/api.py:81
+#: gameplan/api.py:85
 msgid "Only Admin can change user roles"
 msgstr ""
 
@@ -1595,7 +1622,7 @@ msgid "Reactions"
 msgstr ""
 
 #. Label of the read (Check) field in DocType 'GP Notification'
-#: frontend/src/pages/Notifications.vue:14
+#: frontend/src/pages/Notifications.vue:16
 #: gameplan/gameplan/doctype/gp_notification/gp_notification.json
 msgid "Read"
 msgstr ""
@@ -1705,9 +1732,11 @@ msgstr ""
 #: frontend/src/components/AppSidebar.vue:56
 #: frontend/src/components/CommandPalette/CommandPalette.vue:15
 #: frontend/src/components/CommandPalette/CommandPalette.vue:294
-#: frontend/src/components/MobileLayout.vue:75 frontend/src/pages/People.vue:20
-#: frontend/src/pages/People.vue:52 frontend/src/pages/Search.vue:4
-#: frontend/src/pages/Search.vue:21 frontend/src/pages/Search.vue:174
+#: frontend/src/components/MobileLayout.vue:75
+#: frontend/src/components/Settings/Members.vue:6
+#: frontend/src/pages/People.vue:20 frontend/src/pages/People.vue:52
+#: frontend/src/pages/Search.vue:4 frontend/src/pages/Search.vue:21
+#: frontend/src/pages/Search.vue:174
 msgid "Search"
 msgstr ""
 
@@ -1780,12 +1809,13 @@ msgstr ""
 msgid "Setting up your team and project"
 msgstr ""
 
-#: frontend/src/components/Settings/SettingsDialog.vue:62
+#: frontend/src/components/Settings/SettingsDialog.vue:6
+#: frontend/src/components/Settings/SettingsDialog.vue:65
 #: frontend/src/components/Settings/SettingsTab.vue:3
 msgid "Settings"
 msgstr ""
 
-#: frontend/src/components/UserDropdown.vue:43
+#: frontend/src/components/UserDropdown.vue:49
 msgid "Settings & Members"
 msgstr ""
 
@@ -1855,7 +1885,7 @@ msgstr ""
 msgid "Submit"
 msgstr ""
 
-#: frontend/src/components/UserDropdown.vue:54
+#: frontend/src/components/UserDropdown.vue:60
 msgid "Subscription"
 msgstr ""
 
@@ -2020,7 +2050,7 @@ msgstr ""
 msgid "Todo"
 msgstr ""
 
-#: frontend/src/components/UserDropdown.vue:49
+#: frontend/src/components/UserDropdown.vue:55
 msgid "Toggle theme"
 msgstr ""
 
@@ -2072,7 +2102,7 @@ msgid "Unpin discussion..."
 msgstr ""
 
 #: frontend/src/pages/Discussions.vue:173
-#: frontend/src/pages/Notifications.vue:14
+#: frontend/src/pages/Notifications.vue:15
 msgid "Unread"
 msgstr ""
 
@@ -2084,17 +2114,21 @@ msgstr ""
 msgid "Update Password"
 msgstr ""
 
+#: frontend/src/pages/PageGrid.vue:60
+msgid "Updated"
+msgstr ""
+
 #: frontend/src/components/PageList.vue:26
 msgid "Updated {time}"
 msgstr ""
 
 #: frontend/src/components/ProfileImageEditor.vue:19
-#: frontend/src/components/UnsplashImageBrowser.vue:25
+#: frontend/src/components/UnsplashImageBrowser.vue:24
 #: frontend/src/pages/PersonProfile.vue:56
 msgid "Upload Image"
 msgstr ""
 
-#: frontend/src/components/UnsplashImageBrowser.vue:25
+#: frontend/src/components/UnsplashImageBrowser.vue:24
 msgid "Uploading"
 msgstr ""
 
@@ -2138,11 +2172,11 @@ msgstr ""
 msgid "User is disabled"
 msgstr ""
 
-#: frontend/src/pages/Notifications.vue:40
+#: frontend/src/pages/Notifications.vue:43
 msgid "View Discussion"
 msgstr ""
 
-#: frontend/src/pages/Notifications.vue:40
+#: frontend/src/pages/Notifications.vue:43
 msgid "View Task"
 msgstr ""
 
@@ -2154,17 +2188,17 @@ msgid "View all"
 msgstr ""
 
 #: frontend/src/components/AddTeamDialog.vue:15
-#: frontend/src/pages/Project.vue:131 frontend/src/pages/TeamOverview.vue:106
+#: frontend/src/pages/Project.vue:131 frontend/src/pages/TeamOverview.vue:109
 msgid "Visibility"
 msgstr ""
 
 #: frontend/src/components/AddTeamDialog.vue:17
-#: frontend/src/pages/Project.vue:134 frontend/src/pages/TeamOverview.vue:108
+#: frontend/src/pages/Project.vue:134 frontend/src/pages/TeamOverview.vue:111
 msgid "Visible to everyone"
 msgstr ""
 
 #: frontend/src/components/AddTeamDialog.vue:18
-#: frontend/src/pages/Project.vue:135 frontend/src/pages/TeamOverview.vue:109
+#: frontend/src/pages/Project.vue:135 frontend/src/pages/TeamOverview.vue:112
 msgid "Visible to team members (Private)"
 msgstr ""
 
@@ -2245,11 +2279,11 @@ msgstr ""
 msgid "closed this discussion"
 msgstr ""
 
-#: frontend/src/pages/TeamOverview.vue:69
+#: frontend/src/pages/TeamOverview.vue:72
 msgid "discussion"
 msgstr ""
 
-#: frontend/src/pages/TeamOverview.vue:69
+#: frontend/src/pages/TeamOverview.vue:72
 msgid "discussions"
 msgstr ""
 
@@ -2278,11 +2312,11 @@ msgstr ""
 msgid "replies"
 msgstr ""
 
-#: frontend/src/pages/TeamOverview.vue:60
+#: frontend/src/pages/TeamOverview.vue:63
 msgid "task"
 msgstr ""
 
-#: frontend/src/pages/TeamOverview.vue:60
+#: frontend/src/pages/TeamOverview.vue:63
 msgid "tasks"
 msgstr ""
 

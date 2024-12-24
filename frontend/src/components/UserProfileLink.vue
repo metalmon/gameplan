@@ -6,7 +6,7 @@
   >
     <slot />
   </router-link>
-  <span v-else>
+  <span v-else class="inline-flex">
     <slot />
   </span>
 </template>
@@ -16,10 +16,10 @@ export default {
   props: ['user'],
   computed: {
     userProfileName() {
-      return this.$user(this.user).user_profile || null
+      return this.$user(this.user)?.user_profile || null
     },
     canVisitProfile() {
-      return this.userProfileName && this.$user().isNotGuest
+      return this.userProfileName && this.$user()?.isNotGuest
     },
   },
 }

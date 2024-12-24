@@ -40,7 +40,9 @@ let globalComponents = {
 }
 let app = createApp(App)
 setConfig('resourceFetcher', frappeRequest)
-setConfig('defaultListUrl', 'gameplan.extends.client.get_list')
+setConfig('defaultListUrl', 'frappe.client.get_list')
+setConfig('baseUrl', '/api/method')
+setConfig('socketClient', initSocket())
 app.use(translationPlugin)
 app.use(resourcesPlugin)
 app.use(pageMetaPlugin)
@@ -64,7 +66,7 @@ app.config.globalProperties.$isSessionUser = (email) => {
 
 let socket
 if (import.meta.env.DEV) {
-  frappeRequest({ url: '/api/method/gameplan.www.g.get_context_for_dev' }).then((values) => {
+  frappeRequest({ url: '/api/method/gameplan.www.g.get_context_for_dev' }).then(async (values) => {
     for (let key in values) {
       window[key] = values[key]
     }

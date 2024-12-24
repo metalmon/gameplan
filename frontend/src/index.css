@@ -8,3 +8,54 @@
 body {
   -webkit-tap-highlight-color: transparent;
 }
+
+/* Scrollbar styles */
+:root {
+  --scrollbar-track: #f1f1f1;
+  --scrollbar-thumb: #c1c1c1;
+  --scrollbar-thumb-hover: #a8a8a8;
+}
+
+[data-theme="dark"] {
+  --scrollbar-track: #52525b4d;
+  --scrollbar-thumb: #52525b4d;
+  --scrollbar-thumb-hover: #52525b4d;
+}
+
+
+/* Webkit scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--scrollbar-track);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--scrollbar-thumb-hover);
+}
+
+/* Firefox scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
+}
+
+/* Hide scrollbar for mobile devices */
+@media (max-width: 640px) {
+  ::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+  }
+  
+  * {
+    scrollbar-width: none;
+  }
+}

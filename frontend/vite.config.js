@@ -90,55 +90,39 @@ export default defineConfig({
       manifest: {
         name: 'Gameplan',
         short_name: 'Gameplan',
-        start_url: '/g',
+        start_url: '/g/discussions',
         display: 'standalone',
+        background_color: '#1e1e1e',
+        theme_color: '#1e1e1e',
+        description: 'Project Management Tool',
         lang: 'en',
         scope: '/g',
         orientation: 'any',
         categories: ['productivity'],
-        apple_mobile_web_app_capable: 'yes',
-        apple_mobile_web_app_status_bar_style: 'default',
-        apple_mobile_web_app_title: 'Gameplan',
-        prefer_related_applications: false,
-        display_override: ['window-controls-overlay'],
-        url_handlers: [
-          {
-            origin: '{{ frappe.boot.sitename }}'
-          }
-        ],
-        theme_color: {
-          media: '(prefers-color-scheme: light)',
-          value: '#ffffff'
-        },
-        background_color: {
-          media: '(prefers-color-scheme: light)',
-          value: '#ffffff'
-        },
-        additional_theme_colors: [
-          {
-            media: '(prefers-color-scheme: dark)',
-            value: '#1e1e1e'
-          }
-        ],
         icons: [
           {
             src: "/assets/gameplan/manifest/android/android-launchericon-192-192.png",
             sizes: "192x192",
             type: "image/png",
-            purpose: "any maskable"
+            purpose: "any"
           },
           {
             src: "/assets/gameplan/manifest/android/android-launchericon-512-512.png",
             sizes: "512x512",
             type: "image/png",
-            purpose: "any maskable"
+            purpose: "any"
           },
           {
-            src: "/assets/gameplan/manifest/windows11/LargeTile.scale-100.png",
-            sizes: "310x310",
+            src: "/assets/gameplan/manifest/android/android-launchericon-192-192.png",
+            sizes: "192x192",
             type: "image/png",
-            platform: "windows",
-            prefer: true
+            purpose: "maskable"
+          },
+          {
+            src: "/assets/gameplan/manifest/android/android-launchericon-512-512.png",
+            sizes: "512x512",
+            type: "image/png",
+            purpose: "maskable"
           }
         ],
         screenshots: [
@@ -147,17 +131,27 @@ export default defineConfig({
             sizes: '1280x800',
             type: 'image/png',
             form_factor: 'wide',
-            label: 'Gameplan Desktop View'
+            label: 'Gameplan'
           },
           {
             src: '/assets/gameplan/manifest/mobile-screenshot.png',
             sizes: '390x844',
             type: 'image/png',
             form_factor: 'narrow',
-            label: 'Gameplan Mobile View'
+            label: 'Gameplan'
           }
-        ]
-      }
+        ],
+        id: '/g/discussions',
+        dir: 'ltr',
+        prefer_related_applications: false,
+        display_override: ['window-controls-overlay']
+      },
+      devOptions: {
+        enabled: true,
+        type: 'module'
+      },
+      includeAssets: ['favicon.ico', 'apple-touch-icon.png', 'mask-icon.svg'],
+      manifestFilename: 'manifest.json'
     })
   ],
   resolve: {

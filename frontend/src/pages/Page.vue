@@ -12,7 +12,7 @@
       </Breadcrumbs>
       <div class="flex items-center space-x-2">
         <span class="hidden text-sm text-ink-gray-5 sm:block" v-if="page.doc">
-          Last updated {{ $dayjs(page.doc.modified).format('LLL') }}
+          {{ __('Last updated') }} {{ $dayjs(page.doc.modified).format('LLL') }}
         </span>
         <Button
           v-show="page.doc && page.isDirty"

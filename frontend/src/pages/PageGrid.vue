@@ -57,7 +57,7 @@
             </h1>
             <div class="mt-1.5 flex items-center text-sm leading-none text-ink-gray-7">
               <div v-if="d.project">{{ projectTitle(d.project).value }} &middot;&nbsp;</div>
-              <div>Updated {{ $dayjs(d.modified).fromNow() }}</div>
+              <div>{{ __('Updated') }} {{ $dayjs(d.modified).fromNow() }}</div>
             </div>
             <hr class="my-2" />
             <div

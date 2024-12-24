@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col">
+  <div class="flex flex-col h-screen">
     <router-view v-slot="{ Component, route }">
       <header
         class="sticky top-0 z-10 flex items-center justify-between border-b bg-surface-white px-5 py-2.5"
@@ -233,7 +233,7 @@
               variant="solid"
               :loading="project.mergeWithProject.loading"
               @click="
-                () => {
+                ({ close }) => {
                   project.mergeWithProject.submit(
                     { project: projectMergeDialog.project?.value },
                     {
@@ -244,7 +244,7 @@
                       },
                       onSuccess() {
                         if (projectMergeDialog.project.value) {
-                          projectMergeDialog.show = false
+                          close()
                           return $router.replace({
                             name: 'Project',
                             params: { projectId: projectMergeDialog.project.value },
@@ -258,8 +258,8 @@
             >
               {{
                 projectMergeDialog.project
-                  ? `Merge with ${projectMergeDialog.project.label}`
-                  : 'Merge'
+                  ? __('Merge with {0}', [projectMergeDialog.project.label])
+                  : __('Merge')
               }}
             </Button>
           </template>
@@ -355,7 +355,7 @@ export default {
         .filter((d) => d.name != this.project.name)
         .map((d) => ({
           label: d.title,
-          value: d.name.toString(),
+          value: d.name,
           icon: d.icon,
         }))
     },
@@ -493,7 +493,7 @@ export default {
         message: __('Are you sure you want to archive this project?'),
         actions: [
           {
-            label: 'Archive',
+            label: __('Archive'),
             variant: 'solid',
             onClick: (close) => {
               return this.project.archive.submit(null, {

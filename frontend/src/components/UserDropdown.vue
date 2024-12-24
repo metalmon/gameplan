@@ -33,9 +33,15 @@ const dropdownItems = computed(() => [
   {
     icon: 'user',
     label: __('My Profile'),
-    route: {
+    route: user.user_profile ? {
       name: 'PersonProfile',
       params: { personId: user.user_profile },
+    } : null,
+    onClick: () => {
+      if (!user.user_profile) {
+        console.warn('User profile is not available')
+        return
+      }
     },
   },
   {

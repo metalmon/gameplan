@@ -1,44 +1,69 @@
-import dayjs from 'dayjs/esm'
-import relativeTime from 'dayjs/esm/plugin/relativeTime'
-import localizedFormat from 'dayjs/esm/plugin/localizedFormat'
-import updateLocale from 'dayjs/esm/plugin/updateLocale'
+import dayjs from 'dayjs'
+import advancedFormat from 'dayjs/plugin/advancedFormat'
+import timezone from 'dayjs/plugin/timezone'
+import utc from 'dayjs/plugin/utc'
+import localizedFormat from 'dayjs/plugin/localizedFormat'
+import relativeTime from 'dayjs/plugin/relativeTime'
+import updateLocale from 'dayjs/plugin/updateLocale'
 import isToday from 'dayjs/esm/plugin/isToday'
 
 // Import common locales
-import en from 'dayjs/locale/en'
-import ru from 'dayjs/locale/ru'
-import es from 'dayjs/locale/es'
-import fr from 'dayjs/locale/fr'
-import de from 'dayjs/locale/de'
-import it from 'dayjs/locale/it'
-import pt from 'dayjs/locale/pt'
-import zh from 'dayjs/locale/zh'
-import ja from 'dayjs/locale/ja'
-import ko from 'dayjs/locale/ko'
-import ar from 'dayjs/locale/ar'
-import hi from 'dayjs/locale/hi'
+import 'dayjs/locale/en'
+import 'dayjs/locale/ru'
+import 'dayjs/locale/es'
+import 'dayjs/locale/fr'
+import 'dayjs/locale/de'
+import 'dayjs/locale/it'
+import 'dayjs/locale/pt'
+import 'dayjs/locale/zh'
+import 'dayjs/locale/ja'
+import 'dayjs/locale/ko'
+import 'dayjs/locale/ar'
+import 'dayjs/locale/hi'
 
 // Extend dayjs with plugins
-dayjs.extend(updateLocale)
-dayjs.extend(relativeTime)
+dayjs.extend(advancedFormat)
+dayjs.extend(timezone)
+dayjs.extend(utc)
 dayjs.extend(localizedFormat)
+dayjs.extend(relativeTime)
+dayjs.extend(updateLocale)
 dayjs.extend(isToday)
 
-// Register all locales
-dayjs.locale('en', en)
-dayjs.locale('ru', ru)
-dayjs.locale('es', es)
-dayjs.locale('fr', fr)
-dayjs.locale('de', de)
-dayjs.locale('it', it)
-dayjs.locale('pt', pt)
-dayjs.locale('zh', zh)
-dayjs.locale('ja', ja)
-dayjs.locale('ko', ko)
-dayjs.locale('ar', ar)
-dayjs.locale('hi', hi)
+// Function to set dayjs locale
+export async function setDayjsLocale(locale = null) {
+  // Use provided locale or get from browser/system settings
+  locale = locale || window.navigator.language || 'en'
+  // Handle locales with region codes (e.g., 'en-US' -> 'en')
+  const baseLocale = locale.split('-')[0].toLowerCase()
+  
+  try {
+    // Try to use preloaded locale
+    if (!dayjs.Ls[baseLocale]) {
+      // If locale is not loaded, try to load it dynamically
+      console.log(`Loading locale: ${baseLocale}`)
+      // Add @vite-ignore comment to suppress dynamic import warning
+      await import(/* @vite-ignore */ `dayjs/locale/${baseLocale}.js`)
+    }
+    
+    dayjs.locale(baseLocale)
+    console.log(`Locale set to: ${baseLocale}`)
+  } catch (e) {
+    console.warn(`Dayjs locale '${baseLocale}' not found, falling back to English:`, e)
+    dayjs.locale('en')
+  }
+}
 
-// Set English as default
-dayjs.locale('en')
+// Format date with current locale
+export function formatDate(date, format = 'L LTS') {
+  if (!date) return ''
+  return dayjs(date).format(format)
+}
 
-export default dayjs
+// Get relative time in current locale
+export function timeAgo(date) {
+  if (!date) return ''
+  return dayjs(date).fromNow()
+}
+
+export default dayjs 

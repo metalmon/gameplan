@@ -143,7 +143,7 @@ class GPDiscussion(HasActivity, HasMentions, HasReactions, Document):
 			return
 		self.closed_at = frappe.utils.now()
 		self.closed_by = frappe.session.user
-		self.log_activity(_("Discussion Closed"))
+		self.log_activity("Discussion Closed")
 		self.save()
 
 	@frappe.whitelist()
@@ -152,7 +152,7 @@ class GPDiscussion(HasActivity, HasMentions, HasReactions, Document):
 			return
 		self.closed_at = None
 		self.closed_by = None
-		self.log_activity(_("Discussion Reopened"))
+		self.log_activity("Discussion Reopened")
 		self.save()
 
 	@frappe.whitelist()
@@ -161,7 +161,7 @@ class GPDiscussion(HasActivity, HasMentions, HasReactions, Document):
 			return
 		self.pinned_at = frappe.utils.now()
 		self.pinned_by = frappe.session.user
-		self.log_activity(_("Discussion Pinned"))
+		self.log_activity("Discussion Pinned")
 		self.save()
 
 	@frappe.whitelist()
@@ -170,7 +170,7 @@ class GPDiscussion(HasActivity, HasMentions, HasReactions, Document):
 			return
 		self.pinned_at = None
 		self.pinned_by = None
-		self.log_activity(_("Discussion Unpinned"))
+		self.log_activity("Discussion Unpinned")
 		self.save()
 
 	@frappe.whitelist()

@@ -21,8 +21,7 @@
               <template v-slot="{ file, progress, uploading, openFileSelector }">
                 <div class="w-full text-center">
                   <Button @click="openFileSelector" :loading="uploading">
-                        // Start of Selection
-                        {{ uploading ? __('Uploading') + ' ' + progress + '%' : __('Upload Image') }}
+                    {{ uploading ? __('Uploading') + ' ' + progress + '%' : __('Upload Image') }}
                   </Button>
                 </div>
               </template>

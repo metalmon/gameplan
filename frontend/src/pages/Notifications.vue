@@ -11,7 +11,10 @@
           {{ __('Mark all as read') }}
         </Button>
         <TabButtons
-          :buttons="[{ label: __('Unread'), value: 'Unread' }, { label: __('Read'), value: 'Read' }]"
+          :buttons="[
+            { label: __('Unread'), value: 'unread' },
+            { label: __('Read'), value: 'read' }
+          ]"
           v-model="activeTab"
         />
       </div>
@@ -65,12 +68,12 @@ export default {
   components: { TabButtons, Tooltip, Link, Breadcrumbs },
   data() {
     return {
-      activeTab: 'Unread',
+      activeTab: 'unread',
     }
   },
   computed: {
     notifications() {
-      const data = this.activeTab === 'Unread'
+      const data = this.activeTab === 'unread'
         ? this.$resources.unreadNotifications?.data
         : this.$resources.readNotifications?.data
 
@@ -79,7 +82,7 @@ export default {
   },
   watch: {
     activeTab() {
-      const resource = this.activeTab === 'Unread'
+      const resource = this.activeTab === 'unread'
         ? this.$resources.unreadNotifications
         : this.$resources.readNotifications
 

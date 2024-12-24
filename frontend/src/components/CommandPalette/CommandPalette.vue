@@ -314,7 +314,9 @@ export default {
         itemsByGroup[group.title] = []
       }
       for (const item of this.filteredOptions) {
-        itemsByGroup[item.group].push(item)
+        if (itemsByGroup[item.group]) {
+          itemsByGroup[item.group].push(item)
+        }
       }
       let localResults = groups
         .map((group) => {
