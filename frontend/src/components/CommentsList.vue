@@ -70,7 +70,7 @@
             <Tooltip text="Add a poll">
               <Button
                 variant="ghost"
-                label="{{ __('Add a poll') }}"
+                :label="{{ __('Add a poll') }}"
                 @click="
                   () => {
                     newCommentType = 'Poll'
@@ -112,7 +112,7 @@
               onClick: discardComment,
             }"
             :editable="showCommentBox"
-            placeholder="{{ __('Add a comment') }}"
+            :placeholder="{{ __('Add a comment') }}"
           />
           <PollEditor
             v-show="newCommentType == 'Poll'"

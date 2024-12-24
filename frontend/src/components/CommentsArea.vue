@@ -105,7 +105,7 @@
             onClick: discardComment,
           }"
           :editable="showCommentBox"
-          placeholder="__('Add a comment...')"
+          :placeholder="__('Add a comment...')"
         />
         <PollEditor
           v-show="newCommentType == 'Poll'"
