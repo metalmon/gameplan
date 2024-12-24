@@ -70,7 +70,7 @@
             <Tooltip text="Add a poll">
               <Button
                 variant="ghost"
-                :label="{{ __('Add a poll') }}"
+                :label="__('Add a poll')"
                 @click="
                   () => {
                     newCommentType = 'poll'
