@@ -102,7 +102,7 @@
       <Dialog :options="{ title: __('Create project') }" v-model="createNewProjectDialog">
         <template #body-content>
           <div class="space-y-5">
-            <FormControl label="Title" v-model="newProject.title" @keydown.enter="createProject" />
+            <FormControl :label="__( 'Title' )" v-model="newProject.title" @keydown.enter="createProject" />
             <FormControl
               v-if="!team.doc.is_private"
               type="select"
