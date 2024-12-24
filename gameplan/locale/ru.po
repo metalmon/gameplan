@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: Gameplan VERSION\n"
 "Report-Msgid-Bugs-To: faris@frappe.io\n"
 "POT-Creation-Date: 2024-12-24 00:24+0000\n"
-"PO-Revision-Date: 2024-12-24 04:29+0400\n"
+"PO-Revision-Date: 2024-12-24 04:51+0400\n"
 "Last-Translator: AlexKuzin <dev@olimpicfresh.ru>\n"
 "Language-Team: faris@frappe.io\n"
 "Language: ru\n"
@@ -342,7 +342,7 @@ msgstr "Не удается выполнить тесты пользовател
 
 #: frontend/src/components/ProfileImageEditor.vue:64
 msgid "Change Background Color"
-msgstr "Изменить цвет фона"
+msgstr "Изменить фон"
 
 #: frontend/src/components/CoverImage.vue:54
 #: frontend/src/components/ProfileImageEditor.vue:18
@@ -1706,7 +1706,7 @@ msgstr "Отклонить голосование"
 
 #: frontend/src/components/ProfileImageEditor.vue:41
 msgid "Revert To Original"
-msgstr "Вернуться к исходному варианту"
+msgstr "Вернуться к исходному"
 
 #: frontend/src/components/Comment.vue:62
 #: frontend/src/components/DiscussionView.vue:328
