@@ -16,7 +16,7 @@
             <div class="flex-1">
               <FormControl
                 type="text"
-                placeholder="{{ __('Search by keyword') }}"
+                :placeholder="__('Search by keyword')"
                 v-model="search"
                 :debounce="300"
               />
