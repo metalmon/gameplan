@@ -1,14 +1,14 @@
 # Translations template for Gameplan.
-# Copyright (C) 2024 Frappe Technologies Pvt Ltd
+# Copyright (C) 2025 Frappe Technologies Pvt Ltd
 # This file is distributed under the same license as the Gameplan project.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: Gameplan VERSION\n"
 "Report-Msgid-Bugs-To: faris@frappe.io\n"
-"POT-Creation-Date: 2024-12-24 13:37+0000\n"
-"PO-Revision-Date: 2024-12-24 13:37+0000\n"
+"POT-Creation-Date: 2025-04-30 20:24+0000\n"
+"PO-Revision-Date: 2025-04-30 20:24+0000\n"
 "Last-Translator: faris@frappe.io\n"
 "Language-Team: faris@frappe.io\n"
 "MIME-Version: 1.0\n"
@@ -762,6 +762,10 @@ msgstr ""
 msgid "Following"
 msgstr ""
 
+#: gameplan/hooks.py:5
+msgid "Frappe Technologies Pvt Ltd"
+msgstr ""
+
 #. Label of the from_user (Link) field in DocType 'GP Notification'
 #: gameplan/gameplan/doctype/gp_notification/gp_notification.json
 msgid "From User"
@@ -878,6 +882,7 @@ msgid "GP User Profile"
 msgstr ""
 
 #: frontend/src/pages/Onboarding.vue:4 gameplan/config/desktop.py:5
+#: gameplan/hooks.py:4 gameplan/hooks.py:10 gameplan/hooks.py:17
 msgid "Gameplan"
 msgstr ""
 
@@ -1967,6 +1972,10 @@ msgstr ""
 #: frontend/src/components/AddTeamDialog.vue:6
 #: frontend/src/pages/OnboardingStepTeam.vue:3
 msgid "Team Name"
+msgstr ""
+
+#: gameplan/hooks.py:6
+msgid "Team discussion and collaboration tool"
 msgstr ""
 
 #: frontend/src/pages/Project.vue:178

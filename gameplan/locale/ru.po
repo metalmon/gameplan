@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gameplan VERSION\n"
 "Report-Msgid-Bugs-To: faris@frappe.io\n"
-"POT-Creation-Date: 2024-12-24 13:37+0000\n"
-"PO-Revision-Date: 2024-12-24 17:41+0400\n"
+"POT-Creation-Date: 2025-04-30 20:24+0000\n"
+"PO-Revision-Date: 2025-05-01 00:25+0400\n"
 "Last-Translator: AlexKuzin <dev@olimpicfresh.ru>\n"
 "Language-Team: faris@frappe.io\n"
 "Language: ru\n"
@@ -765,6 +765,10 @@ msgstr "Следить за проектом"
 msgid "Following"
 msgstr "Подписан(а)"
 
+#: gameplan/hooks.py:5
+msgid "Frappe Technologies Pvt Ltd"
+msgstr "Frappe Technologies Pvt Ltd"
+
 #. Label of the from_user (Link) field in DocType 'GP Notification'
 #: gameplan/gameplan/doctype/gp_notification/gp_notification.json
 msgid "From User"
@@ -881,6 +885,7 @@ msgid "GP User Profile"
 msgstr "ГП Профиль пользователя"
 
 #: frontend/src/pages/Onboarding.vue:4 gameplan/config/desktop.py:5
+#: gameplan/hooks.py:4 gameplan/hooks.py:10 gameplan/hooks.py:17
 msgid "Gameplan"
 msgstr "Gameplan"
 
@@ -1971,6 +1976,10 @@ msgstr "Команда"
 #: frontend/src/pages/OnboardingStepTeam.vue:3
 msgid "Team Name"
 msgstr "Название команды"
+
+#: gameplan/hooks.py:6
+msgid "Team discussion and collaboration tool"
+msgstr "Инструмент для обсуждения и совместной работы в команде"
 
 #: frontend/src/pages/Project.vue:178
 msgid "Team is required to move this project"
