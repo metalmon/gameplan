@@ -90,9 +90,10 @@ class Search:
 					mapping[field.name] = cstr(value)
 
 		if mapping: # Only add document if there's something to map
-			self.redis.hset(doc_id, mapping=mapping)
+			for k, v in mapping.items():
+				self.redis.hset(doc_id, k, v)
 			if payload:
-				self.redis.hset(doc_id, key="_payload", value=json.dumps(payload))
+				self.redis.hset(doc_id, "_payload", json.dumps(payload))
 
 	def remove_document(self, id):
 		if not self.redisearch_available or not self.index_exists():
