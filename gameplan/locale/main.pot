@@ -7,14 +7,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gameplan VERSION\n"
 "Report-Msgid-Bugs-To: faris@frappe.io\n"
-"POT-Creation-Date: 2025-04-30 20:24+0000\n"
-"PO-Revision-Date: 2025-04-30 20:24+0000\n"
+"POT-Creation-Date: 2025-08-02 08:04+0000\n"
+"PO-Revision-Date: 2025-08-02 08:04+0000\n"
 "Last-Translator: faris@frappe.io\n"
 "Language-Team: faris@frappe.io\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.13.1\n"
+"Generated-By: Babel 2.16.0\n"
 
 #: frontend/src/components/RevisionsDialog.vue:125
 msgid "1 Revision"
@@ -762,10 +762,6 @@ msgstr ""
 msgid "Following"
 msgstr ""
 
-#: gameplan/hooks.py:5
-msgid "Frappe Technologies Pvt Ltd"
-msgstr ""
-
 #. Label of the from_user (Link) field in DocType 'GP Notification'
 #: gameplan/gameplan/doctype/gp_notification/gp_notification.json
 msgid "From User"
@@ -882,7 +878,6 @@ msgid "GP User Profile"
 msgstr ""
 
 #: frontend/src/pages/Onboarding.vue:4 gameplan/config/desktop.py:5
-#: gameplan/hooks.py:4 gameplan/hooks.py:10 gameplan/hooks.py:17
 msgid "Gameplan"
 msgstr ""
 
@@ -1972,10 +1967,6 @@ msgstr ""
 #: frontend/src/components/AddTeamDialog.vue:6
 #: frontend/src/pages/OnboardingStepTeam.vue:3
 msgid "Team Name"
-msgstr ""
-
-#: gameplan/hooks.py:6
-msgid "Team discussion and collaboration tool"
 msgstr ""
 
 #: frontend/src/pages/Project.vue:178
