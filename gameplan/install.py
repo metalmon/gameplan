@@ -1,37 +1,29 @@
 # Copyright (c) 2022, Frappe Technologies Pvt. Ltd. and Contributors
 # MIT License. See license.txt
 
-import frappe
-from rembg import new_session
-
-from gameplan.version import check_frappe_version
-
 
 def before_install():
-    """Run before installation"""
-    check_frappe_version()
+	check_frappe_version()
 
 
 def after_install():
-    """Run after installation"""
-    create_default_records()
-    download_rembg_model()
+	download_rembg_model()
 
 
-def after_migrate():
-    """Run after migration"""
-    if not frappe.db.table_exists("GP Team"):
-        frappe.db.create_missing_tables()
+def check_frappe_version():
+	from frappe import __version__
+	from semantic_version import Version
 
-
-def create_default_records():
-    """Create default records"""
-    if not frappe.db.exists("Role", "Gameplan Admin"):
-        frappe.get_doc(
-            {"doctype": "Role", "role_name": "Gameplan Admin", "desk_access": 1}
-        ).insert(ignore_permissions=True)
+	frappe_version = Version(__version__)
+	if (frappe_version.major or 0) < 15:
+		raise SystemExit("Gameplan requires Frappe Framework version 15 or above")
 
 
 def download_rembg_model():
-    """Download ML model for background removal"""
-    new_session()
+	try:
+		from rembg import new_session
+
+		new_session()
+	except ImportError:
+		# rembg is optional dependency, skip if not installed
+		pass
