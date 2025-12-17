@@ -145,12 +145,17 @@ def invite_by_email(emails: str, role: str, projects: list = None):
 
 @frappe.whitelist()
 def unread_notifications():
-    res = frappe.db.get_all(
-        "GP Notification",
-        "count(name) as count",
-        {"to_user": frappe.session.user, "read": 0},
+    from frappe.query_builder.functions import Count
+
+    Notification = frappe.qb.DocType("GP Notification")
+    res = (
+        frappe.qb.from_(Notification)
+        .select(Count(Notification.name).as_("count"))
+        .where(Notification.to_user == frappe.session.user)
+        .where(Notification.read == 0)
+        .run(as_dict=1)
     )
-    return res[0].count
+    return res[0].count if res else 0
 
 
 @frappe.whitelist(allow_guest=True)
